@@ -10,11 +10,8 @@
   <div class="tile">
     <div class="tile-body">
       <form method="post" action="admin/phu-huynh/edit/<?php echo e($user->id); ?>">
-
         <div class="row">
-
           <div class="col-6">
-
             <div class="form-group">
               <label class="control-label">Số điện thoại (Đăng nhập)</label>
               <input class="form-control" type="text" placeholder="Nhập số điện thoại" name="phone" value="<?php echo e($user->phone); ?>">

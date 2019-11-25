@@ -95,7 +95,6 @@ class ParentController extends BaseController
 	function details($id){
 		$user = UserModel::find($id);
 		$data['parent'] = $user->getParent;
-		// $data['children'] = $parent->getChildren;
 		$this->render('backend.parents.detail',$data);
 	}
 }

@@ -35,8 +35,8 @@
 								<td><?php echo e($value->email); ?></td>
 								<td>
 									<a class="btn btn-success" href="admin/phu-huynh/edit/<?php echo e($value->getUser->id); ?>" role="button">Sửa</a>
-									<a class="btn btn-success" href="#" role="button">Chi tiết</a>
-									<a class="btn btn-success" href="#" role="button">Thêm con</a>
+									<a class="btn btn-success" href="admin/phu-huynh/chi-tiet/<?php echo e($value->getUser->id); ?>" role="button">Chi tiết</a>
+									<a class="btn btn-success" href="admin/Childrens/FormAdd/<?php echo e($value->getUser->id); ?>" role="button">Thêm con</a>
 									<a onclick="return confirm()" class="btn btn-danger" href="admin/phu-huynh/del/<?php echo e($value->getUser->id); ?>" role="button">Xóa</a>
 								</td>
 							</tr>

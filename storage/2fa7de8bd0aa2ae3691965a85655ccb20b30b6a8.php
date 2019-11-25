@@ -1,34 +1,29 @@
-@extends('backend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <main class="app-content">
   <div class="app-title">
     <div>
       <h1><i class="fa fa-edit"></i> Thêm học sinh</h1>
     </div>
-    {{-- <ul class="app-breadcrumb breadcrumb">
-      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item">Forms</li>
-      <li class="breadcrumb-item"><a href="#">Sample Forms</a></li>
-    </ul> --}}
+    
   </div>
 
   <div class="tile">
-    {{-- <h3 class="tile-title">Thêm học sinh</h3> --}}
+    
     <div class="tile-body">
       <form action="" method="POST">
-        <input type="hidden" name="id" value="{{ $parent->id }}">
+        <input type="hidden" name="id" value="<?php echo e($parent->id); ?>">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Tên bố</label>
-              <input class="form-control" type="text" readonly="" value="{{ $parent->father_name }}">
+              <input class="form-control" type="text" readonly="" value="<?php echo e($parent->father_name); ?>">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label class="control-label">Tên mẹ</label>
-              <input class="form-control" type="text" readonly="" value="{{ $parent->mother_name }}">
+              <input class="form-control" type="text" readonly="" value="<?php echo e($parent->mother_name); ?>">
             </div>
           </div>
           <div class="col-md-4"><div class="form-group">
@@ -78,4 +73,5 @@
 </form>
 </div>
 </main>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/backend/childen/FormAddChilden.blade.php ENDPATH**/ ?>
