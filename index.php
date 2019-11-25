@@ -7,5 +7,4 @@ $url = isset($_GET['url']) ? $_GET['url'] : '/';
 require_once './bootstrap.php';
 use Routes\CustomRoute;
 CustomRoute::init($url);
-
  ?>

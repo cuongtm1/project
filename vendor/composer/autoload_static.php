@@ -20,6 +20,10 @@ class ComposerStaticInit37a0acebe8943c7d9b0bb53719657eed
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
         ),
+        'R' => 
+        array (
+            'Routes\\' => 7,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -50,6 +54,10 @@ class ComposerStaticInit37a0acebe8943c7d9b0bb53719657eed
         array (
             'Carbon\\' => 7,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -72,6 +80,10 @@ class ComposerStaticInit37a0acebe8943c7d9b0bb53719657eed
         'Symfony\\Component\\Debug\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Routes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/routes',
         ),
         'Psr\\SimpleCache\\' => 
         array (
@@ -132,6 +144,10 @@ class ComposerStaticInit37a0acebe8943c7d9b0bb53719657eed
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
