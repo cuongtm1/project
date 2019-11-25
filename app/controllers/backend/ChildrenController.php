@@ -1,8 +1,7 @@
 <?php
 namespace App\Controllers\Backend;
 use App\Controllers\BaseController;
-use App\models\childenModel;
-use App\models\lop;
+use App\models\{childenModel,lop,ParentModel};
 /**
  * 
  */
@@ -13,11 +12,9 @@ class ChildrenController extends BaseController
 		$data["childens"]=childenModel::all();
 		$this->render('backend.childen.listchilden',$data);
 	}
-<<<<<<< HEAD
 	function details(){
 		
 	}
-=======
 
 	function del($id){
 		childenModel::Destroy($id);
@@ -25,26 +22,25 @@ class ChildrenController extends BaseController
 		$this->render('backend.childen.listchilden',$data);
 	}
 
-	// function FormAdd(){
-	// 	$data["class"]=lop::all();
-	// 	$this->render('backend.childen.FormAddChilden',$data);
-	// }
+	function FormAdd($id){
+		$data['parent'] = ParentModel::find($id);
+		$data["class"]=lop::all();
+		$this->render('backend.childen.FormAddChilden',$data);
+	}
 
-	// function saveadd(){
-	// 	$save=new childenModel();
-	// 	$save->fullname=$_POST['name'];
-	// 	$save->class_id=$_POST['lop'];
-	// 	$save->birthday=$_POST['ngaysinh'];
-	// 	$save->permanent_residence=$_POST['diachi'];
-	// 	$save->place_of_birth=$_POST['noisinh'];
-	// 	$save->gender=$_POST['gioitinh'];
+	function saveadd($id){
+		$save=new childenModel();
+		$save->fullname=$_POST['name'];
+		$save->class_id=$_POST['lop'];
+		$save->birthday=$_POST['ngaysinh'];
+		$save->permanent_residence=$_POST['diachi'];
+		$save->place_of_birth=$_POST['noisinh'];
+		$save->gender=$_POST['gioitinh'];
 
-	// 	$save->parent_id=1;
-	// 	$save->save();
-	// 	// show lại danh sách
-	// 	$data["childens"]=childenModel::all();
-	// 	$this->render('backend.childen.listchilden',$data);
-	// }
+		$save->parent_id=1;
+		$save->save();
+		header('location:'.BASE_URL.'admin/Childrens');
+	}
 	
 
 
@@ -71,23 +67,6 @@ class ChildrenController extends BaseController
 		$this->render('backend.childen.FormeditChilden',$data);
 	}
 
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> cc6d448d019e6f1a4d839f5d60700eeaba91c9f7
 }
 
 ?>

@@ -25,14 +25,11 @@ class CustomRoute{
 			$router->group(['prefix'=>'Childrens'],function($router){
 				$router->get('', ["App\Controllers\Backend\ChildrenController", "index"]);
 				$router->get('del/{id}', ["App\Controllers\Backend\ChildrenController", "del"]);
-				// $router->get('FormAdd', ["App\Controllers\Backend\ChildrenController", "FormAdd"]);
-				// $router->POST('SaveAdd', ["App\Controllers\Backend\ChildrenController", "saveadd"]);
+				$router->get('FormAdd/{id}', ["App\Controllers\Backend\ChildrenController", "FormAdd"]);
+				$router->post('FormAdd/{id}', ["App\Controllers\Backend\ChildrenController", "saveadd"]);
 				$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
 				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
 			});
-
-			
-
 			$router->group(['prefix'=>'category'],function($router){
 				$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
 				$router->get('del/{id}', ["App\Controllers\Backend\CategoryController", "del"]);
