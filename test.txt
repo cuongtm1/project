@@ -1,2 +1,6 @@
 test git1
+<<<<<<< HEAD
 -- phuc
+=======
+--- cuong
+>>>>>>> 2c9ee32a3e0e74c76bd53c777106f86bca08a6fe
