@@ -12,6 +12,12 @@ class CustomRoute{
 		$router = new RouteCollector();
 		$router->group(['prefix'=>'admin'],function($router){
 			$router->get('/', ["App\Controllers\Backend\HomeController", "index"]);
+
+
+			$router->group(['prefix'=>'Childrens'],function($router){
+				$router->get('', ["App\Controllers\Backend\ChildrenController", "index"]);
+			});
+
 		});
 		
 		// admin
