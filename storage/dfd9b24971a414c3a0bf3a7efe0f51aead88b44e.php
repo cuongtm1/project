@@ -7,7 +7,7 @@
   <meta property="twitter:site" content="@pratikborsadiya">
   <meta property="twitter:creator" content="@pratikborsadiya">
   <!-- Open Graph Meta-->
-  <base href="{{ BASE_URL }}">
+  <base href="<?php echo e(BASE_URL); ?>">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vali Admin">
   <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
@@ -103,7 +103,7 @@
                   </li>
                 </ul>
               </aside>
-              @yield('content')
+              <?php echo $__env->yieldContent('content'); ?>
               <!-- Essential javascripts for application to work-->
               <script src="public/js/jquery-3.2.1.min.js"></script>
               <script src="public/js/popper.min.js"></script>
@@ -172,4 +172,4 @@
              }
            </script>
          </body>
-         </html>
+         </html><?php /**PATH C:\xampp\htdocs\project1\views/backend/master/masterlayout.blade.php ENDPATH**/ ?>

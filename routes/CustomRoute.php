@@ -15,6 +15,9 @@ class CustomRoute{
 			$router->group(['prefix'=>'phu-huynh'],function($router){
 				$router->get('show',['App\Controllers\Backend\ParentController','show']);
 			});
+			$router->group(['prefix'=>'Childrens'],function($router){
+				$router->get('', ["App\Controllers\Backend\ChildrenController", "index"]);
+			});
 		});
 		
 		// admin
