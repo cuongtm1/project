@@ -2,8 +2,8 @@
 namespace App\models;
 use Illuminate\Database\Eloquent\Model;
 class ParentModel extends Model{
-
-	protected $table = 'parents';
+	
+	protected $table = 'users';
 	public $timestamps = false;
 }
 ?>
