@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-test221
-=======
-test
->>>>>>> c56a1cf902944c351d0ce0f16e389a86ea022e78
+cuong
