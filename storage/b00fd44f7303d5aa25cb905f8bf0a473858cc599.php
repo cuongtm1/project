@@ -16,9 +16,11 @@
         <div class="col-md-12">
           <div class="tile">
             <h3 class="tile-title">Form Edit Cate</h3>
+            <?php echo e(sss("edit")); ?>
+
             <div class="tile-body">
 
-              <form action="admin/category/FormSaveEdit/<?php echo e($cate->id); ?>" method="POST">
+              <form action="admin/category/SaveEdit/<?php echo e($cate->id); ?>" method="POST">
                 <div class="form-group">
                   <label class="control-label">Cate Name</label>
                   <input class="form-control" name="name" type="text" value="<?php echo e($cate->name); ?>">
