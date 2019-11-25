@@ -1,5 +1,4 @@
-@extends('backend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <main class="app-content">
   <div class="app-title">
     <div>
@@ -84,4 +83,5 @@
     </div>
     
   </main>
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/backend/parents/add.blade.php ENDPATH**/ ?>
