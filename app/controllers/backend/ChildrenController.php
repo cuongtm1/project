@@ -8,7 +8,7 @@ class ChildrenController extends BaseController
 {
 
 	function index(){
-		$this->render('backend.index');
+		$this->render('backend.childen.listchilden');
 	}
 }
 
