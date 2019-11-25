@@ -17,9 +17,10 @@
         <div class="col-md-12">
           <div class="tile">
             <h3 class="tile-title">Form Edit Cate</h3>
+            {{ sss("edit") }}
             <div class="tile-body">
 
-              <form action="admin/category/FormSaveEdit/{{ $cate->id }}" method="POST">
+              <form action="admin/category/SaveEdit/{{ $cate->id }}" method="POST">
                 <div class="form-group">
                   <label class="control-label">Cate Name</label>
                   <input class="form-control" name="name" type="text" value="{{ $cate->name }}">
