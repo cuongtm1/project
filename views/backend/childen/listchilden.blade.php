@@ -20,25 +20,29 @@
                 <thead>
                   <tr>
                     <th>Full_Name</th>
-                    <th>Parent_id</th>
-                    <th>Birthday</th>
-                    <th>Status</th>
-                    <th>Class_id</th>
-                    <th>Permanent_residence</th>
-                    <th>Place_of_birth</th>
-                    <th>Gender</th>
-                    <th><a class="btn btn-primary" href="">Thêm</a></th>
+                    <th>Ngày sinh</th>
+                    <th>Lớp học</th>
+                    <th>Địa chỉ </th>
+                    <th>Nơi sinh</th>
+                    <th>Giới tính</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
+                  <?php foreach ($childens as $key => $value):?>
                   <tr>
-                    <td>Donna Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
+                    <td><?=$value->fullname  ?></td>
+                    <td><?=$value->birthday  ?></td>
+                    <td><?=$value->showlop->age ?> Tuổi</td>
+                    <td><?=$value->permanent_residence  ?></td>
+                    <td><?=$value->place_of_birth  ?></td>
+                    <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
+
+                    <td><a class="btn btn-success" href="admin/Childrens/Formedit/<?=$value->id  ?>">Sửa</a>
+                    <a onclick=" return del()" class="btn btn-danger" href="admin/Childrens/del/<?=$value->id  ?>">xóa</a>
+                    <a class="btn btn-warning" href="">Chi tiết</a></td>
                   </tr>
+                  <?php endforeach?>
                 </tbody>
               </table>
             </div>
@@ -47,3 +51,10 @@
       </div>
     </main>
     @endsection
+
+    <script>
+      function del(){
+        let comf=confirm("Bạn có muốn xóa không");
+        return comf;
+      }
+    </script>

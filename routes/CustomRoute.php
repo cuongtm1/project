@@ -21,9 +21,34 @@ class CustomRoute{
 				$router->get('del/{id}',['App\Controllers\Backend\ParentController','del']);
 				$router->get('chi-tiet/{id}',['App\Controllers\Backend\ParentController','details']);
 			});
+			
 			$router->group(['prefix'=>'Childrens'],function($router){
 				$router->get('', ["App\Controllers\Backend\ChildrenController", "index"]);
+				$router->get('del/{id}', ["App\Controllers\Backend\ChildrenController", "del"]);
+				// $router->get('FormAdd', ["App\Controllers\Backend\ChildrenController", "FormAdd"]);
+				// $router->POST('SaveAdd', ["App\Controllers\Backend\ChildrenController", "saveadd"]);
+				$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
+				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
 			});
+
+			
+
+			$router->group(['prefix'=>'category'],function($router){
+				$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
+				$router->get('del/{id}', ["App\Controllers\Backend\CategoryController", "del"]);
+				$router->get('FormAdd', ["App\Controllers\Backend\CategoryController", "FormAdd"]);
+				$router->POST('FormSaveAdd', ["App\Controllers\Backend\CategoryController", "FormSaveAdd"]);
+				$router->get('Formedit/{id}', ["App\Controllers\Backend\CategoryController", "Formedit"]);
+				$router->POST('FormSaveEdit/{id}', ["App\Controllers\Backend\CategoryController", "FormSaveEdit"]);
+			});
+
+
+
+
+
+
+
+
 		});
 		
 		// admin
