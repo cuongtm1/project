@@ -97,7 +97,7 @@
                   <li><a class="app-menu__item active" href=""><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
                   <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
-                      <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
+                      <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
                        <li><a class="treeview-item" href="admin/Childrens"><i class="icon fa fa-circle-o"></i>Học sinh</a></li>
                     </ul>
                   </li>
