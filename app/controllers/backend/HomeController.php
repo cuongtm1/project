@@ -6,10 +6,10 @@ use App\Controllers\BaseController;
  */
 class HomeController extends BaseController
 {
-	
+
 	function index(){
-		echo 'a';
+		$this->render('backend.index');
 	}
 }
-	
+
 ?>
