@@ -13,6 +13,11 @@ class ChildrenController extends BaseController
 		$data["childens"]=childenModel::all();
 		$this->render('backend.childen.listchilden',$data);
 	}
+<<<<<<< HEAD
+	function details(){
+		
+	}
+=======
 
 	function del($id){
 		childenModel::Destroy($id);
@@ -82,6 +87,7 @@ class ChildrenController extends BaseController
 
 
 
+>>>>>>> cc6d448d019e6f1a4d839f5d60700eeaba91c9f7
 }
 
 ?>
