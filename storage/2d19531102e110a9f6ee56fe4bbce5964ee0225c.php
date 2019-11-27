@@ -65,34 +65,6 @@
       	return false;
       });
 
-
-
-  $(document).ready(function(){
-      $(".myform").validate({
-    rules: {
-    phone: "required",
-    pass: {
-      required: true,
-      email: true
-    }
-  },
-  messages: {
-    phone: "Please specify your name",
-    pass: {
-      required: "We need your email address to contact you",
-      email: "Your email address must be in the format of name@domain.com"
-    }
-  }
-});
-});
-
-
-
-
-
-
-
-
     </script>
   </body>
 </html><?php /**PATH C:\xampp\htdocs\project1\views/login.blade.php ENDPATH**/ ?>

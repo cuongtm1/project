@@ -57,6 +57,18 @@ class CustomRoute{
 				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
 				$router->get('Detail/{id}', ["App\Controllers\Backend\ChildrenController", "Detail"]);
 			});
+
+			$router->group(['prefix'=>'class'],function($router){
+				$router->get('', ["App\Controllers\Backend\lopController", "index"]);
+				$router->get('Formedit/{id}', ["App\Controllers\Backend\lopController", "Formedit"]);
+				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\lopController", "SaveEdit"]);
+				$router->get('FormAdd', ["App\Controllers\Backend\lopController", "FormAdd"]);
+				$router->POST('FormSaveAdd', ["App\Controllers\Backend\lopController", "FormSaveAdd"]);
+				$router->get('del/{id}', ["App\Controllers\Backend\lopController", "del"]);
+				$router->get('detail/{id}', ["App\Controllers\Backend\lopController", "detail"]);
+			});
+
+
 			$router->group(['prefix'=>'category'],function($router){
 				$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
 				$router->get('del/{id}', ["App\Controllers\Backend\CategoryController", "del"]);

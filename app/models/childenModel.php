@@ -5,7 +5,7 @@ use App\models\lop;
 use App\models\parentModel;
 class childenModel extends Model{
 	protected $table = 'childrens';
-	public $timestamps = false;
+	// public $timestamps = false;
 
 	public function showlop(){
     	return $this->belongsto('App\models\lop','class_id','id');
