@@ -34,7 +34,7 @@
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
                     <td><a class="btn btn-success" href="admin/Childrens/Formedit/<?=$value->id  ?>">Sửa</a>
                     <a onclick=" return del()" class="btn btn-danger" href="admin/Childrens/del/<?=$value->id  ?>">xóa</a>
-                    <a class="btn btn-warning" href="">Chi tiết</a></td>
+                    <a class="btn btn-warning" href="admin/Childrens/Detail/<?=$value->id  ?>">Chi tiết</a></td>
                   </tr>
                   <?php endforeach?>
                 </tbody>

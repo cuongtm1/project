@@ -23,11 +23,17 @@ class CategoryController extends BaseController
 		$this->render('backend.categories.FormAddCate');
     }
     function FormSaveAdd(){
+        if($_POST['name']==""){
+            $data["tb"]="Bạn không được bỏ trống";
+            $this->render('backend.categories.FormAddCate', $data);die;
+        }else{
+
         $save=new categoryModel();
         $save->name=$_POST['name'];
         $save->save();
         ss("add","Thêm thành công danh mục");
         $this->render('backend.categories.FormAddCate');
+        }
     }
     
     function Formedit($id){
@@ -41,12 +47,19 @@ class CategoryController extends BaseController
 
 
     function SaveEdit($id){
+        if($_POST['name']==""){
+            $data["tb"]="Bạn không được bỏ trống";
+            $data["cate"]=categoryModel::find($id);
+            $this->render('backend.categories.FormEditCate', $data);die;
+        }else{
+
         $save=categoryModel::find($id);
         $save->name=$_POST['name'];
         $save->save();
         ss("edit","Bạn đã sửa thành công danh mục");
         $data["cate"]=categoryModel::find($id);
         $this->render('backend.categories.FormEditCate',$data);
+    }
        
     }
     
