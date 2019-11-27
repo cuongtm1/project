@@ -31,7 +31,7 @@ class CustomRoute{
 			$router->get('login',['App\Controllers\Backend\loginController','login']);
 		});
 		$router->POST('login',['App\Controllers\Backend\loginController','postlogin']);
-		$router->get('loguot',['App\Controllers\Backend\loginController','loguot']);
+		$router->get('logout',['App\Controllers\Backend\loginController','loguot']);
 		$router->group(['before' => 'auth'], function($router){
 
 

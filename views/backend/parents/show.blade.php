@@ -39,7 +39,7 @@
 								<td>
 									<a class="btn btn-success" href="admin/phu-huynh/edit/{{ $value->getUser->id }}" role="button">Sửa</a>
 									<a class="btn btn-success" href="admin/phu-huynh/chi-tiet/{{ $value->getUser->id }}" role="button">Chi tiết</a>
-									<a class="btn btn-success" href="admin/Childrens/FormAdd/{{ $value->getUser->id }}" role="button">Thêm con</a>
+									<a class="btn btn-success" href="admin/Childrens/FormAdd/{{ $value->id }}" role="button">Thêm con</a>
 									<a onclick="return confirm()" class="btn btn-danger" href="admin/phu-huynh/del/{{ $value->getUser->id }}" role="button">Xóa</a>
 								</td>
 							</tr>

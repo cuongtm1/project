@@ -3,15 +3,11 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-th-list"></i> Data Table</h1>
-          <p>Table to display analytical data effectively</p>
+          <h1><i class="fa fa-th-list"></i> Danh sách học sinh</h1>
         </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
-        </ul>
+       
       </div>
+      {{ sss('addchildren') }}
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
@@ -19,13 +15,12 @@
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>Full_Name</th>
+                    <th>Họ tên</th>
                     <th>Ngày sinh</th>
                     <th>Lớp học</th>
                     <th>Địa chỉ </th>
                     <th>Nơi sinh</th>
                     <th>Giới tính</th>
-                    
                   </tr>
                 </thead>
                 <tbody>
@@ -37,7 +32,6 @@
                     <td><?=$value->permanent_residence  ?></td>
                     <td><?=$value->place_of_birth  ?></td>
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
-
                     <td><a class="btn btn-success" href="admin/Childrens/Formedit/<?=$value->id  ?>">Sửa</a>
                     <a onclick=" return del()" class="btn btn-danger" href="admin/Childrens/del/<?=$value->id  ?>">xóa</a>
                     <a class="btn btn-warning" href="">Chi tiết</a></td>

@@ -36,9 +36,9 @@ class ChildrenController extends BaseController
 		$save->permanent_residence=$_POST['diachi'];
 		$save->place_of_birth=$_POST['noisinh'];
 		$save->gender=$_POST['gioitinh'];
-
-		$save->parent_id=1;
+		$save->parent_id=$id;
 		$save->save();
+		ss('addchildren','Thêm học sinh thành công');
 		header('location:'.BASE_URL.'admin/Childrens');
 	}
 	

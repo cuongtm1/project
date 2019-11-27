@@ -8,7 +8,7 @@
   </div>
   <div class="tile">
     <div class="tile-body">
-      <form method="post" action="admin/phu-huynh/add">
+      <form method="post" action="admin/phu-huynh/add" id="addParentForm">
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -25,13 +25,13 @@
           <div class="col-6">
             <div class="form-group">
               <label class="control-label">Mật khẩu</label>
-              <input class="form-control" type="password" placeholder="Nhập số điện thoại" name="password">
+              <input class="form-control" type="password" placeholder="Nhập mật khẩu" id="password" name="password">
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
               <label class="control-label">Nhập lại mật khẩu</label>
-              <input class="form-control" type="repassword" placeholder="Nhập số điện thoại" name="repassword">
+              <input class="form-control" type="repassword" placeholder="Nhập lại mật khẩu" name="repassword">
             </div>
           </div>
           <div class="col-6">
