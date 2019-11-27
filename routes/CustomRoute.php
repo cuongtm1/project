@@ -55,6 +55,7 @@ class CustomRoute{
 				$router->post('FormAdd/{id}', ["App\Controllers\Backend\ChildrenController", "saveadd"]);
 				$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
 				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
+				$router->get('Detail/{id}', ["App\Controllers\Backend\ChildrenController", "Detail"]);
 			});
 			$router->group(['prefix'=>'category'],function($router){
 				$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);

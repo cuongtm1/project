@@ -104,13 +104,6 @@
 
 
 
-
-                  
-
-
-
-
-
                   <li><a class="treeview-item" href="admin/category/"><i class="icon fa fa-circle-o"></i> Danh mục</a></li>
                 </ul>
               </aside>

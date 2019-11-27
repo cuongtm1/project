@@ -10,6 +10,7 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Login - Vali Admin</title>
+    <script src="jquery validate/jquery.validate.min.js"></script>
   </head>
   <body>
     <section class="material-half-bg">
@@ -20,15 +21,16 @@
         <h1>Vali</h1>
       </div>
       <div class="login-box">
-        <form class="login-form" action="" method="POST">
+        <form onsubmit="validate()" class="login-form" class="myform" action="" method="POST">
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
+          <h3 class="tb"></h3>
           <div class="form-group">
             <label class="control-label">SỐ ĐIỆN THOẠI</label>
-            <input class="form-control" name="phone" type="number" placeholder="phone" >
+            <input class="form-control"  name="phone" type="number" placeholder="phone" >
           </div>
           <div class="form-group">
             <label class="control-label">PASSWORD</label>
-            <input class="form-control" name="pass" type="password" placeholder="Password">
+            <input class="form-control"  name="pass" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="utility">
@@ -62,6 +64,35 @@
       	$('.login-box').toggleClass('flipped');
       	return false;
       });
+
+
+
+  $(document).ready(function(){
+      $(".myform").validate({
+    rules: {
+    phone: "required",
+    pass: {
+      required: true,
+      email: true
+    }
+  },
+  messages: {
+    phone: "Please specify your name",
+    pass: {
+      required: "We need your email address to contact you",
+      email: "Your email address must be in the format of name@domain.com"
+    }
+  }
+});
+});
+
+
+
+
+
+
+
+
     </script>
   </body>
 </html><?php /**PATH C:\xampp\htdocs\project1\views/login.blade.php ENDPATH**/ ?>

@@ -12,17 +12,6 @@ class ChildrenController extends BaseController
 		$data["childens"]=childenModel::all();
 		$this->render('backend.childen.listchilden',$data);
 	}
-<<<<<<< HEAD
-
-	function details(){
-		
-	}
-
-=======
-	function details(){
-		
-	}
->>>>>>> eb1ded18289e7ea9d206df28650da2357f787b0c
 
 	function del($id){
 		childenModel::Destroy($id);
@@ -75,10 +64,23 @@ class ChildrenController extends BaseController
 		$this->render('backend.childen.FormeditChilden',$data);
 	}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> eb1ded18289e7ea9d206df28650da2357f787b0c
+	function Detail($id){
+		$data["childen"]=childenModel::find($id)->showparents;
+		$this->render('backend.childen.detailparent',$data);
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
 
 ?>
