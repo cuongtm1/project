@@ -48,6 +48,7 @@ class lopController extends BaseController
     }
 
     function detail($id){
+        $data['class']=lop::find($id);
         $data['childrens']=childenModel::where('class_id',$id)->get();
 		$this->render('backend.class.listchilden',$data);
     }

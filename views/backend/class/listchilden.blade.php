@@ -15,6 +15,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
+              <p><h4> Danh sách lớp :{{ $class->name }}    __     {{ $class->age }}  Tuổi</h4></p>
             <div class="tile-body">
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
@@ -34,9 +35,8 @@
                     <td><?=$value->permanent_residence  ?></td>
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
 
-                    <td><a class="btn btn-success" href="admin/Childrens/Formedit/<?=$value->id  ?>">Sửa</a>
-                    <a onclick=" return del()" class="btn btn-danger" href="admin/Childrens/del/<?=$value->id  ?>">xóa</a>
-                    <a class="btn btn-warning" href="admin/Childrens/Detail/<?=$value->id  ?>">Chi tiết</a></td>
+                    <td>
+                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/del/<?=$value->id  ?>">xóa</a>
                   </tr>
                   <?php endforeach?>
                 </tbody>
