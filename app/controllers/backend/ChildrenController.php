@@ -12,6 +12,7 @@ class ChildrenController extends BaseController
 		$data["childens"]=childenModel::all();
 		$this->render('backend.childen.listchilden',$data);
 	}
+
 	function details(){
 		
 	}
@@ -41,8 +42,6 @@ class ChildrenController extends BaseController
 		ss('addchildren','Thêm học sinh thành công');
 		header('location:'.BASE_URL.'admin/Childrens');
 	}
-	
-
 
 	function FormEdit($id){
 		$data["childen"]=childenModel::where('id',$id)->first();
@@ -66,7 +65,6 @@ class ChildrenController extends BaseController
 		ss("edit","Sửa thành công");
 		$this->render('backend.childen.FormeditChilden',$data);
 	}
-
 }
 
 ?>
