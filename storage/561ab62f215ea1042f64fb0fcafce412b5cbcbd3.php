@@ -1,5 +1,4 @@
-@extends('backend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -15,7 +14,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <p><h4>Lớp {{ $class->name }} ({{ $class->age }} Tuổi)</h4></p>
+            <p><h4>Lớp <?php echo e($class->name); ?> (<?php echo e($class->age); ?> Tuổi)</h4></p>
             <div class="tile-body">
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
@@ -24,7 +23,7 @@
                     <th>Ngày sinh</th>
                     <th>Địa chỉ </th>
                     <th>Giới tính</th>
-                    <th><a class="btn btn-info" href="admin/class/addtoclass/{{ $class->id }}">Thêm học sinh vào lớp</a></th>
+                    <th><a class="btn btn-info" href="admin/class/addtoclass/<?php echo e($class->id); ?>">Thêm học sinh vào lớp</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,7 +35,7 @@
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
 
                     <td>
-                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/delchildren/<?=$value->id  ?>/{{ $class->id }}">xóa</a>
+                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/delchildren/<?=$value->id  ?>/<?php echo e($class->id); ?>">xóa</a>
                    </td>
                   </tr>
                   <?php endforeach?>
@@ -47,7 +46,7 @@
         </div>
       </div>
     </main>
-    @endsection
+    <?php $__env->stopSection(); ?>
 
     <script>
       function del(){
@@ -55,3 +54,4 @@
         return comf;
       }
     </script>
+<?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/backend/class/listchilden.blade.php ENDPATH**/ ?>

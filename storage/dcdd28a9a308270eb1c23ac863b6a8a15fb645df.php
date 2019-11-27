@@ -14,6 +14,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
+            <p><h4>Lớp <?php echo e($class->name); ?> (<?php echo e($class->age); ?> Tuổi)</h4></p>
             <div class="tile-body">
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
@@ -22,7 +23,7 @@
                     <th>Ngày sinh</th>
                     <th>Địa chỉ </th>
                     <th>Giới tính</th>
-                    
+                    <th><a class="btn btn-info" href="admin/class/addtoclass/<?php echo e($class->id); ?>">Thêm học sinh vào lớp</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,9 +34,9 @@
                     <td><?=$value->permanent_residence  ?></td>
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
 
-                    <td><a class="btn btn-success" href="admin/Childrens/Formedit/<?=$value->id  ?>">Sửa</a>
-                    <a onclick=" return del()" class="btn btn-danger" href="admin/Childrens/del/<?=$value->id  ?>">xóa</a>
-                    <a class="btn btn-warning" href="admin/Childrens/Detail/<?=$value->id  ?>">Chi tiết</a></td>
+                    <td>
+                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/delchildren/<?=$value->id  ?>/<?php echo e($class->id); ?>">xóa</a>
+                   </td>
                   </tr>
                   <?php endforeach?>
                 </tbody>
