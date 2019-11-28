@@ -105,8 +105,8 @@
                   </li>
                   <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
-                      <li><a class="treeview-item" href="admin/tin-tuc/danh-sach"><i class="icon fa fa-circle-o"></i>Danh sách tin tức</a></li>
-                       <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
+                      <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Danh sách tin tức</a></li>
+                       <li><a class="treeview-item" href="admin/Childrens"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
                     </ul>
                   </li>
                 </ul>
