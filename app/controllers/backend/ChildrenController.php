@@ -12,6 +12,9 @@ class ChildrenController extends BaseController
 		$data["childens"]=childenModel::all();
 		$this->render('backend.childen.listchilden',$data);
 	}
+	function details(){
+		
+	}
 
 	function del($id){
 		childenModel::Destroy($id);
@@ -33,13 +36,11 @@ class ChildrenController extends BaseController
 		$save->permanent_residence=$_POST['diachi'];
 		$save->place_of_birth=$_POST['noisinh'];
 		$save->gender=$_POST['gioitinh'];
-
-		$save->parent_id=1;
+		$save->parent_id=$id;
 		$save->save();
+		ss('addchildren','Thêm học sinh thành công');
 		header('location:'.BASE_URL.'admin/Childrens');
 	}
-	
-
 
 	function FormEdit($id){
 		$data["childen"]=childenModel::where('id',$id)->first();
@@ -63,24 +64,11 @@ class ChildrenController extends BaseController
 		ss("edit","Sửa thành công");
 		$this->render('backend.childen.FormeditChilden',$data);
 	}
-
-
 	function Detail($id){
 		$data["childen"]=childenModel::find($id)->showparents;
 		$this->render('backend.childen.detailparent',$data);
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
 }
 
 ?>

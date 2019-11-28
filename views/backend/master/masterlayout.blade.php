@@ -8,6 +8,7 @@
   <meta property="twitter:creator" content="@pratikborsadiya">
   <!-- Open Graph Meta-->
   <base href="{{ BASE_URL }}">
+  <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vali Admin">
   <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
@@ -79,7 +80,7 @@
                     <ul class="dropdown-menu settings-menu dropdown-menu-right">
                       <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
                       <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                      <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                      <li><a class="dropdown-item" href="logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -89,12 +90,12 @@
               <aside class="app-sidebar">
                 <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
                   <div>
-                    <p class="app-sidebar__user-name">John Doe</p>
-                    <p class="app-sidebar__user-designation">Frontend Developer</p>
+                    <p class="app-sidebar__user-name">Nhóm 2</p>
+                    {{-- <p class="app-sidebar__user-designation">Frontend Developer</p> --}}
                   </div>
                 </div>
                 <ul class="app-menu">
-                  <li><a class="app-menu__item active" href=""><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
+                  <li><a class="app-menu__item active" href="admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
                   <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
@@ -102,8 +103,12 @@
                        <li><a class="treeview-item" href="admin/class"><i class="icon fa fa-circle-o"></i>Lớp Học</a></li>
                     </ul>
                   </li>
-
-                  <li><a class="treeview-item" href="admin/category/"><i class="icon fa  fa-pie-chart"></i> Danh mục</a></li>
+                  <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                    <ul class="treeview-menu">
+                      <li><a class="treeview-item" href="admin/tin-tuc/danh-sach"><i class="icon fa fa-circle-o"></i>Danh sách tin tức</a></li>
+                       <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </aside>
               @yield('content')
@@ -174,5 +179,7 @@
                ga('send', 'pageview');
              }
            </script>
+           <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js" type="text/javascript" charset="utf-8" async defer></script>
+           <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
          </body>
          </html>
