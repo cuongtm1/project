@@ -64,8 +64,10 @@ class CustomRoute{
 				$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\lopController", "SaveEdit"]);
 				$router->get('FormAdd', ["App\Controllers\Backend\lopController", "FormAdd"]);
 				$router->POST('FormSaveAdd', ["App\Controllers\Backend\lopController", "FormSaveAdd"]);
-				$router->get('del/{id}', ["App\Controllers\Backend\lopController", "del"]);
-				$router->get('detail/{id}', ["App\Controllers\Backend\lopController", "detail"]);
+					$router->get('del/{id}', ["App\Controllers\Backend\lopController", "del"]);
+					$router->get('detail/{id}', ["App\Controllers\Backend\lopController", "detail"]);
+					$router->get('delchildren/{id}/{id_class}', ["App\Controllers\Backend\lopController", "delchildren"]);
+					$router->get('addtoclass/{id}', ["App\Controllers\Backend\lopController", "addtoclass"]);
 			});
 
 

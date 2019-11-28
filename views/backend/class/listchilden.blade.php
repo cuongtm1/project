@@ -24,7 +24,7 @@
                     <th>Ngày sinh</th>
                     <th>Địa chỉ </th>
                     <th>Giới tính</th>
-                    
+                    <th><a class="btn btn-info" href="admin/class/addtoclass/<?php echo e($class->id); ?>">Thêm học sinh vào lớp</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>
 
                     <td>
-                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/del/<?=$value->id  ?>">xóa</a>
+                    <a onclick=" return del()" class="btn btn-danger" href="admin/class/delchildren/<?=$value->id  ?>/{{ $class->id }}">xóa</a>
                   </tr>
                   <?php endforeach?>
                 </tbody>
