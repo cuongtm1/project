@@ -53,6 +53,12 @@ class CustomRoute{
 					$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
 					$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
 				});
+				$router->group(['prefix'=>'tin-tuc'],function($router){
+					$router->get('danh-sach',["App\Controllers\Backend\NewsController", "index"]);
+					$router->get('del/{id}',["App\Controllers\Backend\NewsController", "delNews"]);
+					$router->get('add',["App\Controllers\Backend\NewsController", "addNews"]);
+					$router->post('add',["App\Controllers\Backend\NewsController", "addNewsPost"]);
+				});
 				$router->group(['prefix'=>'category'],function($router){
 					$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
 					$router->get('del/{id}', ["App\Controllers\Backend\CategoryController", "del"]);
