@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +35,7 @@
               <label>
                 <input type="checkbox"><span class="label-text">Stay Signed in</span>
               </label>
+
             </div>
             <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
           </div>
@@ -44,9 +44,6 @@
           <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
         </div>
       </form>
-
-
-        
       </div>
     </section>
     <!-- Essential javascripts for application to work-->

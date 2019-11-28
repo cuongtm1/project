@@ -23,6 +23,10 @@
               <form action="admin/category/SaveEdit/{{ $cate->id }}" method="POST">
                 <div class="form-group">
                   <label class="control-label">Cate Name</label>
+                  <br>
+                  <span style="color: red;"><?php if (isset($tb)) {
+                   echo $tb;
+                  } ?></span>
                   <input class="form-control" name="name" type="text" value="{{ $cate->name }}">
                 </div>
             </div>

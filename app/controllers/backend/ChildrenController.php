@@ -41,8 +41,6 @@ class ChildrenController extends BaseController
 		ss('addchildren','Thêm học sinh thành công');
 		header('location:'.BASE_URL.'admin/Childrens');
 	}
-	
-
 
 	function FormEdit($id){
 		$data["childen"]=childenModel::where('id',$id)->first();
@@ -66,7 +64,11 @@ class ChildrenController extends BaseController
 		ss("edit","Sửa thành công");
 		$this->render('backend.childen.FormeditChilden',$data);
 	}
-
+	function Detail($id){
+		$data["childen"]=childenModel::find($id)->showparents;
+		$this->render('backend.childen.detailparent',$data);
+		
+	}
 }
 
 ?>
