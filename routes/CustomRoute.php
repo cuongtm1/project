@@ -53,6 +53,12 @@ class CustomRoute{
 					$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
 					$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
 				});
+				$router->group(['prefix'=>'tin-tuc'],function($router){
+					$router->get('danh-sach',["App\Controllers\Backend\NewsController", "index"]);
+					$router->get('del/{id}',["App\Controllers\Backend\NewsController", "delNews"]);
+					$router->get('add',["App\Controllers\Backend\NewsController", "addNews"]);
+					$router->post('add',["App\Controllers\Backend\NewsController", "addNewsPost"]);
+				});
 				$router->group(['prefix'=>'category'],function($router){
 					$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
 					$router->get('del/{id}', ["App\Controllers\Backend\CategoryController", "del"]);
@@ -61,13 +67,23 @@ class CustomRoute{
 					$router->get('Formedit/{id}', ["App\Controllers\Backend\CategoryController", "Formedit"]);
 					$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\CategoryController", "SaveEdit"]);
 				});
+				$router->group(['prefix'=>'class'],function($router){
+					$router->get('', ["App\Controllers\Backend\lopController", "index"]);
+					$router->get('Formedit/{id}', ["App\Controllers\Backend\lopController", "Formedit"]);
+					$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\lopController", "SaveEdit"]);
+					$router->get('FormAdd', ["App\Controllers\Backend\lopController", "FormAdd"]);
+					$router->POST('FormSaveAdd', ["App\Controllers\Backend\lopController", "FormSaveAdd"]);
+					$router->get('del/{id}', ["App\Controllers\Backend\lopController", "del"]);
+					$router->get('detail/{id}', ["App\Controllers\Backend\lopController", "detail"]);
+					$router->get('delchildren/{id}/{id_class}', ["App\Controllers\Backend\lopController", "delchildren"]);
+					$router->get('addtoclass/{id}', ["App\Controllers\Backend\lopController", "addtoclass"]);
+				});
 			});
-
-
 		});
 		// front end
 		$router->get('',['App\Controllers\Frontend\HomeController','index']);
 		$router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
+		
 		$dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());
 		$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($url, PHP_URL_PATH));
 		echo $response;

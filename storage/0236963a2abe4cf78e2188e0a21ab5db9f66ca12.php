@@ -24,7 +24,7 @@
         <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
         <div class="form-group">
           <label class="control-label">SỐ ĐIỆN THOẠI</label>
-          <input class="form-control" name="phone" type="number" placeholder="phone" >
+          <input class="form-control" name="phone" type="text" placeholder="phone" >
         </div>
         <div class="form-group">
           <label class="control-label">PASSWORD</label>
