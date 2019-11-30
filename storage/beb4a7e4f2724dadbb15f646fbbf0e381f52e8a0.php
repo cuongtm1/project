@@ -1,3 +1,4 @@
+<?php $__env->startSection('news','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 <main class="app-content">
 	<div class="app-title">
@@ -26,8 +27,8 @@
 							<?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 							<tr>
 								<td><?php echo e($value->title); ?></td>
-								<td><?php echo e($value->image); ?></td>
-								<td><?php echo e($value->description); ?></td>
+								<td><img src="public/image/<?php echo e($value->image); ?>" alt="" width="200px"></td>
+								<td style="max-width: 500px"><?php echo e($value->description); ?></td>
 								<td><?php echo e(date_format($value->created_at,'Y/m/d')); ?></td>
 								<td><?php echo e($value->getCate->name); ?></td>
 								<td>

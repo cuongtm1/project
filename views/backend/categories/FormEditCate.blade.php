@@ -1,4 +1,5 @@
 @extends('backend.master.masterlayout')
+@section('news','is-expanded')
 @section('content')
 
     <main class="app-content">

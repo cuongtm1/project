@@ -1,4 +1,5 @@
 @extends('backend.master.masterlayout')
+@section('news','is-expanded')
 @section('content')
 <main class="app-content">
 	<div class="app-title">
@@ -26,8 +27,8 @@
 							@foreach($news as $value)
 							<tr>
 								<td>{{ $value->title }}</td>
-								<td>{{ $value->image}}</td>
-								<td>{{ $value->description }}</td>
+								<td><img src="public/image/{{ $value->image}}" alt="" width="200px"></td>
+								<td style="max-width: 500px">{{ $value->description }}</td>
 								<td>{{ date_format($value->created_at,'Y/m/d') }}</td>
 								<td>{{ $value->getCate->name }}</td>
 								<td>

@@ -58,6 +58,8 @@ class CustomRoute{
 					$router->get('del/{id}',["App\Controllers\Backend\NewsController", "delNews"]);
 					$router->get('add',["App\Controllers\Backend\NewsController", "addNews"]);
 					$router->post('add',["App\Controllers\Backend\NewsController", "addNewsPost"]);
+					$router->get('edit/{id}',["App\Controllers\Backend\NewsController", "editNews"]);
+					$router->post('edit/{id}',["App\Controllers\Backend\NewsController", "postEditNews"]);
 				});
 				$router->group(['prefix'=>'category'],function($router){
 					$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
@@ -83,7 +85,7 @@ class CustomRoute{
 		// front end
 		$router->get('',['App\Controllers\Frontend\HomeController','index']);
 		$router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
-		
+		$router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);
 		$dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());
 		$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($url, PHP_URL_PATH));
 		echo $response;

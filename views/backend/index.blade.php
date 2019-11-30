@@ -1,4 +1,5 @@
 @extends('backend.master.masterlayout')
+@section('trangchu','active')
 @section('content')
     <main class="app-content">
       <div class="app-title">

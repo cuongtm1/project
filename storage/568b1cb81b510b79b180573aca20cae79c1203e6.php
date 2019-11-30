@@ -1,3 +1,4 @@
+<?php $__env->startSection('info','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 <main class="app-content">
   <div class="app-title">
@@ -48,13 +49,13 @@
           <div class="col-6">
             <div class="form-group">
               <label class="control-label">Số điện thoại bố</label>
-              <input class="form-control" type="number" placeholder="Nhập số điện thoại bố" name="father_phone">
+              <input class="form-control" type="text" placeholder="Nhập số điện thoại bố" name="father_phone">
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
               <label class="control-label">Số điện thoại mẹ</label>
-              <input class="form-control" type="number" placeholder="Nhập số điện thoại mẹ" name="mother_phone">
+              <input class="form-control" type="text" placeholder="Nhập số điện thoại mẹ" name="mother_phone">
             </div>
           </div>
           <div class="col-6">

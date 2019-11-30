@@ -35,7 +35,6 @@
               <label>
                 <input type="checkbox"><span class="label-text">Stay Signed in</span>
               </label>
-
             </div>
             <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
           </div>
@@ -59,6 +58,7 @@
       	$('.login-box').toggleClass('flipped');
       	return false;
       });
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>

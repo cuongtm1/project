@@ -23,6 +23,7 @@
   <link rel="stylesheet" type="text/css" href="public/css/main.css">
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="public/js/jquery-3.2.1.min.js"></script>
 </head>
 <body class="app sidebar-mini rtl">
   <!-- Navbar-->
@@ -95,15 +96,15 @@
                   </div>
                 </div>
                 <ul class="app-menu">
-                  <li><a class="app-menu__item active" href="admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
-                  <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                  <li ><a class="app-menu__item @yield('trangchu')" href="admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
+                  <li class="treeview @yield('info')"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
                        <li><a class="treeview-item" href="admin/Childrens"><i class="icon fa fa-circle-o"></i>Học sinh</a></li>
                        <li><a class="treeview-item" href="admin/class"><i class="icon fa fa-circle-o"></i>Lớp Học</a></li>
                     </ul>
                   </li>
-                  <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                  <li class="treeview @yield('news')"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/tin-tuc/danh-sach"><i class="icon fa fa-circle-o"></i>Danh sách tin tức</a></li>
                        <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>

@@ -1,4 +1,5 @@
 @extends('backend.master.masterlayout')
+@section('info','is-expanded')
 @section('content')
     <main class="app-content">
       <div class="app-title">
@@ -19,7 +20,7 @@
                 <thead>
                   <tr>
                     <th>Tên lớp học</th>
-                    <th> Độ tuổi </th>
+                    <th>Độ tuổi </th>
                     <th><a class="btn btn-info" href="admin/class/FormAdd">Thêm</a> </th>
                   </tr>
                 </thead>

@@ -1,3 +1,4 @@
+<?php $__env->startSection('news','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <main class="app-content">
@@ -10,25 +11,15 @@
 		<div class="tile-body">
 			<form method="post" action="admin/tin-tuc/add" id="addParentForm" enctype="multipart/form-data">
 				<div class="row">
-					<div class="col-12">
+					<div class="col-8">
 						<div class="form-group">
 							<label class="control-label">Tiêu đề</label>
 							<input class="form-control" type="text" placeholder="Nhập tiêu đề bài viết" name="title">
 						</div>
-					</div>
-					<div class="col-8">
 						<div class="form-group">
 							<label class="control-label">Đường dẫn(Nếu bỏ trống sẽ tự điền)</label>
 							<input class="form-control" type="text" placeholder="Nhập đường dẫn sẽ hiển thị bài viết" name="slug">
 						</div>
-					</div>
-					<div class="col-4">
-						<div class="form-group">
-							<label class="control-label">Ảnh bài viết</label>
-							<input class="form-control" type="file" name="image">
-						</div>
-					</div>
-					<div class="col-8">
 						<div class="form-group">
 							<label class="control-label">Danh mục bài viết</label>
 							<select class="custom-select" name="cate">
@@ -37,11 +28,16 @@
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							</select>
 						</div>
-					</div>
-					<div class="col-12">
 						<div class="form-group">
 							<label for="exampleFormControlTextarea1">Mô tả  ngắn</label>
 							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="form-group">
+							<label class="control-label">Ảnh bài viết</label>
+							<img src="http://localhost/Shop_K79/backend/img/import-img.png" alt="" style="max-height: 300px;cursor: pointer;" id="imagenews">
+							<input class="form-control" type="file" name="image" onchange="changeImg(this)" id="img" style="display: none">
 						</div>
 					</div>
 					<div class="col-12">
@@ -63,13 +59,39 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-12">
+						<div class="form-group">
+							<label class="control-label">Ảnh slider</label>
+							<input class="form-control" type="file" name="slider">
+						</div>
+					</div>
 				</div>
 				<div class="tile-footer">
-					<button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Đăng ký</button>
+					<button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Thêm</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	</main>
-<?php $__env->stopSection(); ?> 
+</main>
+<script>
+	function changeImg(input){
+            //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+            if(input.files && input.files[0]){
+            	var reader = new FileReader();
+                //Sự kiện file đã được load vào website
+                reader.onload = function(e){
+                    //Thay đổi đường dẫn ảnh
+                    $('#imagenews').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(document).ready(function() {
+        	$('#imagenews').click(function(){
+        		$('#img').click();
+        	});
+        });
+
+    </script>
+    <?php $__env->stopSection(); ?> 
 <?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/backend/news/add.blade.php ENDPATH**/ ?>

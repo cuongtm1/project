@@ -1,5 +1,4 @@
-@extends('frontend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="plan">
 			<div class="container">
 				<h3 class="plan-text">
@@ -17,9 +16,10 @@
 				<div class="row">
 					<div class="col-12 col-lg-8 plan-detail-text">
 						<h4 style="text-shadow: 0px 0px 1px;
-						">{{ $newsDetail->title }}</h4>
+						"><?php echo e($newsDetail->title); ?></h4>
 
-						{!! $newsDetail->content !!}
+						<?php echo $newsDetail->content; ?>
+
 					</div>
 					<div class="col-lg-4">
 						<div class="news-transfer-list">
@@ -69,4 +69,5 @@
 				</div>	
 			</div>
 		</div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/frontend/news/details.blade.php ENDPATH**/ ?>
