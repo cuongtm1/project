@@ -63,20 +63,46 @@ $(document).ready(function() {
 			address:"Không được bỏ trống",
 		}
 	});
-	$("#formLogin").validate({
+	$("#formAddchildren").validate({
 		rules: {
-			phone: {
-				required: true,
-				minlength: 10,
-				maxlength: 10
+			name: "required",
+			noisinh: "required",
+			diachi: "required",
+		},
+		messages: {
+			name: "Chưa nhập tên",
+			noisinh: "Chưa nhập nơi sinh",
+			diachi: "Chưa nhập địa chỉ",
+		}
+	});
+	$("#formAddClass").validate({
+		rules: {
+			name: "required",
+			age: {
+				required:true,
+				min:1,
+				max:5,
 			},
 		},
 		messages: {
-			phone: {
-				required: 'Chưa nhập số điện thoại',
-				minlength: 'Số điện thoại gồm 10 số',
-				maxlength: 'Số điện thoại gồm 10 số'
+			name: "Chưa nhập tên",
+			age: {
+				required:"Chưa nhập số tuổi",
+				min:"Tuổi trong khoảng 1-5",
+				max:"Tuổi trong khoảng 1-5",
 			},
+		}
+	});
+	$("#addNewsForm").validate({
+		rules: {
+			title: "required",
+			description: "required",
+			editor1: "required",
+		},
+		messages: {
+			title: "Chưa nhập tiêu đề",
+			description: "Chưa nhập mô tả",
+			editor1: "Chưa nhập nội dung",
 		}
 	});
 });

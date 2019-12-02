@@ -13,11 +13,10 @@
       <li class="breadcrumb-item"><a href="#">Sample Forms</a></li>
     </ul> --}}
   </div>
-
   <div class="tile">
     {{-- <h3 class="tile-title">Thêm học sinh</h3> --}}
     <div class="tile-body">
-      <form action="" method="POST">
+      <form action="" method="POST" id="formAddchildren">
         <input type="hidden" name="id" value="{{ $parent->id }}">
         <div class="row">
           <div class="col-md-6">
@@ -60,7 +59,7 @@
             <label class="control-label">Giới tính</label>
             <div class="form-check">
               <label class="form-check-label">
-                <input name="gioitinh" class="form-check-input" type="radio" value="1" >Nam
+                <input name="gioitinh" class="form-check-input" type="radio" value="1" checked>Nam
               </label>
             </div>
             <div class="form-check">
@@ -71,12 +70,13 @@
           </div>
         </div>
       </div>
-        <div class="tile-footer">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Thêm</button>
-        </div>
+      <div class="tile-footer">
+        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Thêm</button>
+      </div>
     </div>
   </div>
 </form>
 </div>
 </main>
+<script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
 @endsection

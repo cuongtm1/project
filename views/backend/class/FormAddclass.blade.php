@@ -21,7 +21,7 @@
             {{ sss("add") }}
             <div class="tile-body">
 
-              <form action="admin/class/FormSaveAdd" method="POST">
+              <form action="admin/class/FormSaveAdd" method="POST" id="formAddClass">
                 <div class="form-group">
                   <label class="control-label">Tên lớp học</label>
                   <input class="form-control" name="name" type="text" placeholder="Enter Cate name">
@@ -39,4 +39,5 @@
       </div>
     </form>
     </main>
+    <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
     @endsection

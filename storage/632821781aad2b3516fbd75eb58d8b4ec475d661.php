@@ -9,7 +9,7 @@
 	</div>
 	<div class="tile">
 		<div class="tile-body">
-			<form method="post" action="admin/tin-tuc/add" id="addParentForm" enctype="multipart/form-data">
+			<form method="post" action="admin/tin-tuc/add" id="addNewsForm" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-8">
 						<div class="form-group">
@@ -73,6 +73,7 @@
 		</div>
 	</div>
 </main>
+<script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
 <script>
 	function changeImg(input){
             //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
