@@ -50,6 +50,8 @@ class lopController extends BaseController
     function detail($id){
         $data['class']=lop::find($id);
         $data['childrens']=childenModel::where('class_id',$id)->get();
+        // tìm toàn bộ hs chưa có lớp
+        $data["nullClass"]=childenModel::where("class_id",null)->get();
 		$this->render('backend.class.listchilden',$data);
     }
 
@@ -92,9 +94,39 @@ class lopController extends BaseController
 		header('location:'.BASE_URL."admin/class/detail/$class->id");
     }
 
-    
-    
-    
+
+
+
+    function addthucong($ageClass){
+         // tìm toàn bộ hs chưa có lớp
+         $i = 0;
+         $test = [];
+         $data["childrennull"]=childenModel::where("class_id",null)->get();
+         foreach($data["childrennull"] as $value){
+            if(GetAge($value->birthday) == $ageClass){
+                $test[$i] = $value->toArray();
+                $i++;
+            }
+         }
+        $data['test'] = $test;
+        $data['class'] =lop::where('age',$ageClass)->first();
+         $this->render('backend.class.listchildennullclass',$data);
+}
+
+
+function Addcheckbox(){
+    // dd($_REQUEST    );
+    foreach ($_POST['select'] as $key=> $value) {
+     $save=childenModel::find($value["id"]);
+     $save->class_id=$_POST['class'];
+     $save->save();
+    }
+    ss("addchildren","Thêm học sinh thành công");
+    header('location:'.BASE_URL."admin/class");
+}
+
+
+
 
 
 

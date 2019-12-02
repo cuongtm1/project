@@ -41,7 +41,6 @@
                       <?=$value->showlop->name ?> (<?=$value->showlop->age ?> Tuổi)
                     </td>
                       <?php endif ?>
-                
                     <td><?=$value->permanent_residence  ?></td>
                     <td><?=$value->place_of_birth  ?></td>
                     <td><?php if($value->gender==0){echo "Nữ";}else{echo "nam";} ?></td>

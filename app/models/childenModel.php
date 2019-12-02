@@ -15,11 +15,5 @@ class childenModel extends Model{
 		return $this->belongsto('App\models\parentModel', 'parent_id', 'id_users');
 	}
 
-
-
-
-
-
-
 }
 ?>

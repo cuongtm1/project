@@ -25,7 +25,6 @@
                     <th>Ngày sinh</th>
                     <th>Địa chỉ </th>
                     <th>Giới tính</th>
-                    <th><a class="btn btn-info" href="admin/class/addtoclass/{{ $class->id }}">Thêm học sinh vào lớp</a></th>
                   </tr>
                 </thead>
                 <tbody>

@@ -111,6 +111,7 @@
                   </li>
                 </ul>
               </aside>
+              <script src="public/js/jquery-3.2.1.min.js"></script>
               <?php echo $__env->yieldContent('content'); ?>
               <!-- Essential javascripts for application to work-->
               <script src="public/js/jquery-3.2.1.min.js"></script>
