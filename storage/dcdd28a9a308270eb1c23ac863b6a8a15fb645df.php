@@ -14,11 +14,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-<<<<<<< HEAD
-              <p><h4> Danh sách lớp :<?php echo e($class->name); ?>    __     <?php echo e($class->age); ?>  Tuổi</h4></p>
-=======
             <p><h4>Lớp <?php echo e($class->name); ?> (<?php echo e($class->age); ?> Tuổi)</h4></p>
->>>>>>> master
             <div class="tile-body">
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
@@ -27,7 +23,6 @@
                     <th>Ngày sinh</th>
                     <th>Địa chỉ </th>
                     <th>Giới tính</th>
-                    <th><a class="btn btn-info" href="admin/class/addtoclass/<?php echo e($class->id); ?>">Thêm học sinh vào lớp</a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -40,10 +35,7 @@
 
                     <td>
                     <a onclick=" return del()" class="btn btn-danger" href="admin/class/delchildren/<?=$value->id  ?>/<?php echo e($class->id); ?>">xóa</a>
-<<<<<<< HEAD
-=======
                    </td>
->>>>>>> master
                   </tr>
                   <?php endforeach?>
                 </tbody>

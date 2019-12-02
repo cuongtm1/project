@@ -2,7 +2,9 @@
 
 <?php
 function dd($value){
+	echo '<pre>';
 	var_dump($value);
+	echo '</pre>';
 	die;
 }
 
@@ -42,3 +44,27 @@ function slug($str) {
 	$str = preg_replace("/( )/", '-', $str);
 	return strtolower($str);
 } 
+
+
+function CountChidreninClass($data){
+		$data =  $data->toArray();
+		return count($data);
+}
+
+function GetAge($birthday){ 
+	$tuoi = date_format(date_create($birthday),"m/d/Y");
+             // tinhs tuooir
+             $birthDate = $tuoi;
+             //explode the date to get month, day and year
+             $birthDate = explode("/", $birthDate);
+             //get age from date or birthdate
+             $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+                 ? ((date("Y") - $birthDate[2]) - 1)
+                 : (date("Y") - $birthDate[2]));
+            return $age;
+}
+function getClassByAge($childrennull){
+	foreach ($childrennull as $value) {
+		
+	}
+}

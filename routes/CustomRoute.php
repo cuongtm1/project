@@ -77,6 +77,8 @@ class CustomRoute{
 					$router->get('detail/{id}', ["App\Controllers\Backend\lopController", "detail"]);
 					$router->get('delchildren/{id}/{id_class}', ["App\Controllers\Backend\lopController", "delchildren"]);
 					$router->get('addtoclass/{id}', ["App\Controllers\Backend\lopController", "addtoclass"]);
+					$router->get('addthucong/{ageClass}', ["App\Controllers\Backend\lopController", "addthucong"]);
+					$router->POST('addcheckbox', ["App\Controllers\Backend\lopController", "Addcheckbox"]);
 				});
 			});
 		});
