@@ -1,16 +1,16 @@
-@extends('backend.master.masterlayout')
-@section('info','is-expanded')
+@extends('backend.phuhuynh.master.masterlayout')
+@section('edithoso','active')
 @section('content')
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fa fa-edit"></i>Sửa phụ huynh</h1>
+      <h1><i class="fa fa-edit"></i>Sửa thông tin</h1>
     </div>
   </div>
-  {{ sss('editparent') }}
+  {{ sss('editphuhuynh') }}
   <div class="tile">
     <div class="tile-body">
-      <form method="post" action="admin/phu-huynh/edit/{{ $user->id }}">
+      <form method="post" action="phu-huynh/edit">
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -84,6 +84,5 @@
         </div>
       </form>
     </div>
-    
   </main>
   @endsection

@@ -7,7 +7,14 @@ function dd($value){
 	echo '</pre>';
 	die;
 }
-
+function getGender($number){
+	if($number==0){
+		return 'Nữ';
+	}
+	if($number==1){
+		return 'Nam';
+	}
+}
 function ss($key,$value){
 	$_SESSION[$key] = $value;
 }

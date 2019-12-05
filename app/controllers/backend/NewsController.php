@@ -23,7 +23,8 @@ class NewsController extends BaseController
 	function addNewsPost(){
 		// var_dump($_FILES['image']);die;
 		// dd($_REQUEST);
-		$image ="noimage.jpg";
+		
+		$image ="noimage.png";
 		$featured = 0;
 		$title = $_POST['title'];
 		$description = $_POST['description'];
@@ -44,8 +45,8 @@ class NewsController extends BaseController
 		if($_FILES['image']['size']>0){
 			$image = uniqid().'-'.$_FILES['image']['name'];
 			move_uploaded_file($_FILES['image']['tmp_name'],'public/image/'.$image);
-			$news->image = $image;
 		}
+		$news->image = $image;
 		if($_FILES['slider']['size']>0){
 			$slider = uniqid().'-'.$_FILES['slider']['name'];
 			move_uploaded_file($_FILES['slider']['tmp_name'],'public/image/'.$image);
@@ -79,6 +80,9 @@ class NewsController extends BaseController
 		$news->featured = $featured;
 		$news->cate_id = $cate;
 		if($_FILES['image']['size']>0){
+			if($news->image!='noimage.png' && file_exists('public/image/'.$news->image)){
+				unlink('public/image/'.$news->image);
+			}
 			$image = uniqid().'-'.$_FILES['image']['name'];
 			move_uploaded_file($_FILES['image']['tmp_name'],'public/image/'.$image);
 			$news->image = $image;

@@ -178,66 +178,33 @@
 					<!-- <p>Chúng tôi luôn mang đến cho bạn những tin tức mới nhất từ thị trường Bất động sản.</p> -->
 				</div>
 				<div class="row"> <!-- container -->
+					@foreach($news as $value)
 					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
 						<div class="news-list news-1">
 							<div class="news-content"> 
 								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
+									<img class="news-content-div-img-img" src="public/image/{{ $value->image }}" alt="" height="250">
+									<a href="tin-tuc/{{ $value->slug }}.html" class="news-read-more">Chi tiết</a>
 								</div>
 
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
+								<h3><a class="news-title" href="tin-tuc/{{ $value->slug }}.html">
+									@if(strlen($value->title)>=50)
+									{{ substr($value->title,0,50) }}...
+									@else
+									{{ $value->title }}
+									@endif
+								</a></h3>
 								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
+									@if(strlen($value->description)>=150)
+									<p>{{ substr($value->description,0,150) }}...</p>
+									@else
+									<p>{{ $value->description }}</p>
+									@endif
 								</div>
 							</div>					
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>					
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>						
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>						
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>

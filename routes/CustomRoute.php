@@ -13,8 +13,12 @@ class CustomRoute{
 	public static function init($url){
 		$router = new RouteCollector();
 		$router->filter('auth', function(){
-			if(!isset($_SESSION['user']) || $_SESSION['user']['role']<1){
+			if(!isset($_SESSION['user'])){
 				header('location:'.BASE_URL.'login');
+				return false;
+			}
+			if($_SESSION['user']['role']<1){
+				header('location:'.BASE_URL.'phu-huynh');
 				return false;
 			}
 		});
@@ -83,6 +87,12 @@ class CustomRoute{
 					$router->POST('addcheckbox', ["App\Controllers\Backend\lopController", "Addcheckbox"]);
 				});
 			});
+		});
+		// Parents
+		$router->group(['prefix'=>'phu-huynh'],function($router){
+			$router->get('',['App\Controllers\Backend\Parents\HomeController','index']);
+			$router->get('edit',['App\Controllers\Backend\Parents\HomeController','edit']);
+			$router->post('edit',['App\Controllers\Backend\Parents\HomeController','postEdit']);
 		});
 		// front end
 		$router->get('',['App\Controllers\Frontend\HomeController','index']);

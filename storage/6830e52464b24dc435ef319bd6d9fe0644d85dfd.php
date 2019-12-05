@@ -177,66 +177,34 @@
 					<!-- <p>Chúng tôi luôn mang đến cho bạn những tin tức mới nhất từ thị trường Bất động sản.</p> -->
 				</div>
 				<div class="row"> <!-- container -->
+					<?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
 						<div class="news-list news-1">
 							<div class="news-content"> 
 								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
+									<img class="news-content-div-img-img" src="public/image/<?php echo e($value->image); ?>" alt="" height="250">
+									<a href="tin-tuc/<?php echo e($value->slug); ?>.html" class="news-read-more">Chi tiết</a>
 								</div>
 
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
+								<h3><a class="news-title" href="tin-tuc/<?php echo e($value->slug); ?>.html">
+									<?php if(strlen($value->title)>=50): ?>
+									<?php echo e(substr($value->title,0,50)); ?>...
+									<?php else: ?>
+									<?php echo e($value->title); ?>
+
+									<?php endif; ?>
+								</a></h3>
 								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
+									<?php if(strlen($value->description)>=150): ?>
+									<p><?php echo e(substr($value->description,0,150)); ?>...</p>
+									<?php else: ?>
+									<p><?php echo e($value->description); ?></p>
+									<?php endif; ?>
 								</div>
 							</div>					
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>					
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>						
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3 news-block"> <!-- card -->
-						<div class="news-list news-1">
-							<div class="news-content"> 
-								<div class="news-content-div-img">
-									<img class="news-content-div-img-img" src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/bb1-370x270.jpg" alt="" height="250">
-									<a href="tintuc-detail-1" class="news-read-more">Chi tiết</a>
-								</div>
-
-								<h3><a class="news-title" href="tintuc-detail-1">NHỮNG QUẢ BÓNG NGỘ NGHĨNH</a></h3>
-								<div class="news-content">
-									<p>Trong hoạt động hôm nay của các bạn nhỏ lớp Chòi đã sáng tạo nên những quả bóng ngộ nghĩnh với các hình vẽ là hoa ...</p>
-								</div>
-							</div>						
-						</div>
-					</div>
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				</div>
 			</div>
 		</div>
