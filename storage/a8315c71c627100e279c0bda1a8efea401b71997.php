@@ -1,3 +1,4 @@
+<?php $__env->startSection('info','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 
     <main class="app-content">
@@ -20,7 +21,7 @@
 
             <div class="tile-body">
 
-              <form action="admin/class/FormSaveAdd" method="POST">
+              <form action="admin/class/FormSaveAdd" method="POST" id="formAddClass">
                 <div class="form-group">
                   <label class="control-label">Tên lớp học</label>
                   <input class="form-control" name="name" type="text" placeholder="Enter Cate name">
@@ -38,5 +39,6 @@
       </div>
     </form>
     </main>
+    <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
     <?php $__env->stopSection(); ?>
 <?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\project1\views/backend/class/FormAddclass.blade.php ENDPATH**/ ?>

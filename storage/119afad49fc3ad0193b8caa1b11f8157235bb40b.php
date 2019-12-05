@@ -1,3 +1,4 @@
+<?php $__env->startSection('news','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 
     <main class="app-content">

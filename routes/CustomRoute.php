@@ -52,6 +52,7 @@ class CustomRoute{
 					$router->post('FormAdd/{id}', ["App\Controllers\Backend\ChildrenController", "saveadd"]);
 					$router->get('Formedit/{id}', ["App\Controllers\Backend\ChildrenController", "FormEdit"]);
 					$router->POST('SaveEdit/{id}', ["App\Controllers\Backend\ChildrenController", "saveedit"]);
+					$router->get('Detail/{id}', ["App\Controllers\Backend\ChildrenController", "Detail"]);
 				});
 				$router->group(['prefix'=>'tin-tuc'],function($router){
 					$router->get('danh-sach',["App\Controllers\Backend\NewsController", "index"]);
