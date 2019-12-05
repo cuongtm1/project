@@ -1,3 +1,4 @@
+<?php $__env->startSection('info','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
     <main class="app-content">
       <div class="app-title">
@@ -23,7 +24,6 @@
                     <th> Độ tuổi </th>
                     <th> Số lượng học sinh</th>
                     <th><a class="btn btn-info" href="admin/class/FormAdd">Thêm Lớp</a> </th>
-
                   </tr>
                 </thead>
                 <tbody>

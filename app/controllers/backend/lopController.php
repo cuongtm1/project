@@ -115,8 +115,8 @@ class lopController extends BaseController
 
 
 function Addcheckbox(){
-    
-    foreach($_POST['select'] as $key=> $value) {
+
+    foreach ($_POST['select'] as $key=> $value) {
      $save=childenModel::find($value);
      $save->class_id=$_POST['class'];
      $save->save();

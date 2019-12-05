@@ -1,3 +1,4 @@
+<?php $__env->startSection('info','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 <main class="app-content">
 	<div class="app-title">

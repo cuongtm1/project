@@ -1,3 +1,4 @@
+<?php $__env->startSection('info','is-expanded'); ?>
 <?php $__env->startSection('content'); ?>
 <main class="app-content">
 	<div class="app-title">
@@ -37,7 +38,7 @@
 									<a class="btn btn-success" href="admin/phu-huynh/edit/<?php echo e($value->getUser->id); ?>" role="button">Sửa</a>
 									<a class="btn btn-success" href="admin/phu-huynh/chi-tiet/<?php echo e($value->getUser->id); ?>" role="button">Chi tiết</a>
 									<a class="btn btn-success" href="admin/Childrens/FormAdd/<?php echo e($value->id); ?>" role="button">Thêm con</a>
-									<a onclick="return confirm()" class="btn btn-danger" href="admin/phu-huynh/del/<?php echo e($value->getUser->id); ?>" role="button">Xóa</a>
+									<a onclick="return confirmDelete()" class="btn btn-danger" href="admin/phu-huynh/del/<?php echo e($value->getUser->id); ?>" role="button">Xóa</a>
 								</td>
 							</tr>
 
@@ -51,7 +52,8 @@
 </main>
 <script>
 	function confirmDelete(){
-		return confirm('Bạn có muốn xóa không?')
+		let com = confirm('Bạn có muốn xóa không?');
+		return com;
 	}
 </script>
 <?php $__env->stopSection(); ?>
