@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers\Backend\Parents;
 use App\Controllers\BaseController;
-use App\Models\{ParentModel,UserModel};
+use App\Models\{ParentModel,UserModel,ActivateModel,Join_activate};
 /**
  * 
  */
@@ -49,6 +49,23 @@ class HomeController extends BaseController
 		$parent->save();
 		ss('editphuhuynh','Sửa thông tin thành công');
 		header('location:'.BASE_URL.'phu-huynh/edit/');
+	}
+	function joinactivate(){
+		$data['activate'] = ActivateModel::all();
+		$data['user'] = UserModel::where('phone',$_SESSION['user']['phone'])->first()->getParent()->first();
+		// $user = $data['user']->getChildren()->first()->getJoinActivate;
+		// dd($user);
+		$this->render('backend.phuhuynh.joinactivate',$data);
+	}
+	function postjoinactivate($id){
+		// dd($_REQUEST);
+		$join_activate = new Join_activate();
+		$join_activate->activate_id = $id;
+		$join_activate->children_id = $_POST['children'];
+		$join_activate->status = 0;
+		$join_activate->save();
+		ss('joinactive','Đăng ký tham gia hoạt động thành công, Vui lòng chờ xác nhận từ nhà trường');
+		header('location:'.BASE_URL.'phu-huynh/tham-gia-hoat-dong/');
 	}
 }
 

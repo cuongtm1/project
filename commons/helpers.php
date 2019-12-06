@@ -75,3 +75,12 @@ function getClassByAge($childrennull){
 		
 	}
 }
+// function checkJoinActivate($idStudent,$idActivate){
+// 	dd($idActivate);
+// 	if($idActivate==$idStudent){
+// 		return "Đã tham gia";
+// 	}
+// 	if($idActivate!=$idStudent){
+// 		return "Đã tham gia";
+// 	}
+// }

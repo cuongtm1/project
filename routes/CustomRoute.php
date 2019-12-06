@@ -22,7 +22,7 @@ class CustomRoute{
 				return false;
 			}
 		});
-
+		
 		$router->filter('login', function(){
 			if(isset($_SESSION['user'])){
 				header('location:'.BASE_URL);
@@ -39,6 +39,8 @@ class CustomRoute{
 			// admin
 			$router->group(['prefix'=>'admin'],function($router){
 				$router->get('/', ["App\Controllers\Backend\HomeController", "index"]);
+				$router->get('setting', ["App\Controllers\Backend\HomeController", "setting"]);
+				$router->post('setting', ["App\Controllers\Backend\HomeController", "postSetting"]);
 				$router->group(['prefix'=>'phu-huynh'],function($router){
 					$router->get('thong-tin',['App\Controllers\Backend\ParentController','show']);
 					$router->get('add',['App\Controllers\Backend\ParentController','add']);
@@ -65,6 +67,19 @@ class CustomRoute{
 					$router->post('add',["App\Controllers\Backend\NewsController", "addNewsPost"]);
 					$router->get('edit/{id}',["App\Controllers\Backend\NewsController", "editNews"]);
 					$router->post('edit/{id}',["App\Controllers\Backend\NewsController", "postEditNews"]);
+
+				});
+				$router->group(['prefix'=>'activate'],function($router){
+					$router->get('', ["App\Controllers\Backend\ActivateController", "index"]);
+					$router->get('/add', ["App\Controllers\Backend\ActivateController", "add"]);
+					$router->get('del/{id}', ["App\Controllers\Backend\ActivateController", "del"]);
+					$router->post('/add', ["App\Controllers\Backend\ActivateController", "postadd"]);
+					$router->get('edit/{id}', ["App\Controllers\Backend\ActivateController", "edit"]);
+					$router->post('edit/{id}', ["App\Controllers\Backend\ActivateController", "postEdit"]);
+					$router->get('pending/{id}', ["App\Controllers\Backend\ActivateController", "pending"]);
+					$router->get('pending/confirm/{id}', ["App\Controllers\Backend\ActivateController", "confirm"]);
+					$router->get('pending/delconfirm/{id}', ["App\Controllers\Backend\ActivateController", "delconfirm"]);
+					$router->get('join/{id}',["App\Controllers\Backend\ActivateController", "join"]);
 				});
 				$router->group(['prefix'=>'category'],function($router){
 					$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
@@ -90,18 +105,21 @@ class CustomRoute{
 			});
 		});
 		// Parents
-		$router->group(['prefix'=>'phu-huynh'],function($router){
-			$router->get('',['App\Controllers\Backend\Parents\HomeController','index']);
-			$router->get('edit',['App\Controllers\Backend\Parents\HomeController','edit']);
-			$router->post('edit',['App\Controllers\Backend\Parents\HomeController','postEdit']);
-		});
+$router->group(['prefix'=>'phu-huynh'],function($router){
+	$router->get('',['App\Controllers\Backend\Parents\HomeController','index']);
+	$router->get('edit',['App\Controllers\Backend\Parents\HomeController','edit']);
+	$router->get('tham-gia-hoat-dong',['App\Controllers\Backend\Parents\HomeController','joinactivate']);
+	$router->post('tham-gia-hoat-dong/{id}',['App\Controllers\Backend\Parents\HomeController','postjoinactivate']);
+	$router->post('edit',['App\Controllers\Backend\Parents\HomeController','postEdit']);
+});
 		// front end
-		$router->get('',['App\Controllers\Frontend\HomeController','index']);
-		$router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
-		$router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);
-		$dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());
-		$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($url, PHP_URL_PATH));
-		echo $response;
-	}
+$router->get('',['App\Controllers\Frontend\HomeController','index']);
+$router->get('lien-he',['App\Controllers\Frontend\ContactController','index']);
+$router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
+$router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);
+$dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());
+$response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($url, PHP_URL_PATH));
+echo $response;
+}
 }
 ?>

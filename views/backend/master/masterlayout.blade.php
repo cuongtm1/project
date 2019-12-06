@@ -79,7 +79,6 @@
                   <!-- User Menu-->
                   <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                     <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                      <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
                       <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
                       <li><a class="dropdown-item" href="logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                     </ul>
@@ -96,7 +95,7 @@
                   </div>
                 </div>
                 <ul class="app-menu">
-                  <li ><a class="app-menu__item @yield('trangchu')" href="admin"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Trang chủ</span></a></li>
+                  <li ><a class="app-menu__item @yield('trangchu')" href="admin"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">Trang chủ</span></a></li>
                   <li class="treeview @yield('info')"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
@@ -110,6 +109,8 @@
                        <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
                     </ul>
                   </li>
+                  <li ><a class="app-menu__item @yield('acti')" href="admin/activate"><i class="app-menu__icon fa fa-gamepad"></i><span class="app-menu__label">Quản trị hoạt động</span></a></li>
+                  <li ><a class="app-menu__item @yield('setting')" href="admin/setting"><i class="app-menu__icon fa fa-cog fa-lg"></i><span class="app-menu__label">Setting</span></a></li>
                 </ul>
               </aside>
               <script src="public/js/jquery-3.2.1.min.js"></script>
