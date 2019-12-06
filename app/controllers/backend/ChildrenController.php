@@ -66,7 +66,7 @@ class ChildrenController extends BaseController
 	}
 	
 	function Detail($id){
-		$data["childen"]=childenModel::find($id)->showparents;
+		$data["childen"]=ParentModel::find($id);
 		$this->render('backend.childen.detailparent',$data);
 		
 	}
