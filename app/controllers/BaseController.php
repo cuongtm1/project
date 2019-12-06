@@ -4,6 +4,7 @@ namespace App\Controllers;
  * 
  */
 use Jenssegers\Blade\Blade;
+use App\models\{SettingModel};
 class BaseController
 {
 	

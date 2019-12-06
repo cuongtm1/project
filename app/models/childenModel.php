@@ -8,11 +8,15 @@ class childenModel extends Model{
 	// public $timestamps = false;
 
 	public function showlop(){
-    	return $this->belongsto('App\models\lop','class_id','id');
-   }
+		return $this->belongsto('App\models\lop','class_id','id');
+	}
 
-   public function showparents(){
+	public function showparents(){
 		return $this->belongsto('App\models\parentModel', 'parent_id', 'id_users');
+	}
+	public function getJoinActivate()
+	{
+	    return $this->hasOne('App\models\Join_activate', 'children_id', 'id');
 	}
 
 }

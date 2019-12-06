@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 05, 2019 lúc 05:52 PM
+-- Thời gian đã tạo: Th12 06, 2019 lúc 07:22 PM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.2
 
@@ -30,11 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `activates` (
   `id` int(11) NOT NULL,
-  `activate` int(10) NOT NULL,
-  `start` time DEFAULT NULL,
-  `stop` time DEFAULT NULL,
+  `activate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `start` date DEFAULT NULL,
+  `stop` date DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `activates`
+--
+
+INSERT INTO `activates` (`id`, `activate`, `start`, `stop`, `description`) VALUES
+(1, 'Leo Núi', '2019-12-06', '2019-12-07', 'Leo núi himalaya 1 ngày'),
+(4, 'test', '2019-12-07', '2019-12-22', 'test');
 
 -- --------------------------------------------------------
 
@@ -92,9 +100,9 @@ CREATE TABLE `childrens` (
 --
 
 INSERT INTO `childrens` (`id`, `fullname`, `parent_id`, `birthday`, `status`, `class_id`, `permanent_residence`, `place_of_birth`, `gender`, `created_at`, `updated_at`) VALUES
-(11, 'manh cuong', 7, '2017-11-07', NULL, 4, 'Số 79 ngõ 58 nguyễn đình hoàn', 'Quận Cầu Giấy', 0, NULL, '2019-12-02 21:35:14'),
-(12, 'manhcuong', 7, '2019-11-13', NULL, 4, 'Cau Giay, Ha Noi', 'Ha Noi', 1, NULL, '2019-11-27 12:13:16'),
-(14, 'test1', 6, '2018-01-28', NULL, 1, 'Cau Giay, Ha Noi', 'Ha Noi', 1, '2019-11-27 09:17:40', '2019-12-02 21:56:00');
+(11, 'manh cuong', 7, '2017-11-07', NULL, NULL, 'Số 79 ngõ 58 nguyễn đình hoàn', 'Quận Cầu Giấy', 0, NULL, '2019-12-06 06:05:18'),
+(12, 'manhcuong', 7, '2019-11-13', NULL, NULL, 'Cau Giay, Ha Noi', 'Ha Noi', 1, NULL, '2019-12-06 06:05:20'),
+(14, 'test1', 6, '2018-01-28', NULL, NULL, 'Cau Giay, Ha Noi', 'Ha Noi', 1, '2019-11-27 09:17:40', '2019-12-06 06:05:11');
 
 -- --------------------------------------------------------
 
@@ -188,8 +196,18 @@ CREATE TABLE `forgot_password` (
 CREATE TABLE `join_activate` (
   `id` int(11) NOT NULL,
   `activate_id` int(11) NOT NULL,
-  `children_id` int(11) NOT NULL
+  `children_id` int(11) NOT NULL,
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `join_activate`
+--
+
+INSERT INTO `join_activate` (`id`, `activate_id`, `children_id`, `status`) VALUES
+(1, 1, 14, 0),
+(2, 1, 12, 1),
+(4, 1, 11, 0);
 
 -- --------------------------------------------------------
 
@@ -256,15 +274,22 @@ INSERT INTO `parents` (`id`, `father_name`, `mother_name`, `father_phonenumber`,
 CREATE TABLE `setting` (
   `id` int(11) NOT NULL,
   `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `phone` int(10) DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `facebook` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `google` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `message_footer` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `zalo` int(10) DEFAULT NULL,
+  `zalo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `map` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `map` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `setting`
+--
+
+INSERT INTO `setting` (`id`, `logo`, `phone`, `email`, `facebook`, `google`, `message_footer`, `zalo`, `address`, `map`) VALUES
+(1, 'logo.png', '(024) 7300 1955', 'caodang@fpt.edu.vn', 'https://www.facebook.com/thuvientruyen.net/', '', 'Hân hoan chào đón Quý phụ huynh và xin được chúc mừng con em của Quý vị đã trở thành công dân của Trường Mầm Non Ánh Mai Sáng – nơi các em sẽ liên tục khám phá, trải nghiệm và phát triển hoàn hảo trên bước đường khai thức đầu đời.', '', 'Tòa nhà FPT Polytechnic (nhà H), Hàm Nghi, Mỹ Đình, Nam Từ Liêm, Hà Nội', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.827497037811!2d105.80170731492959!3d21.03958719278444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3e638834e5%3A0xc0757decf12a8bf4!2zMTUgxJDDtG5nIFF1YW4sIFF1YW4gSG9hLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1575642997438!5m2!1svi!2s\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>');
 
 -- --------------------------------------------------------
 
@@ -391,7 +416,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `activates`
 --
 ALTER TABLE `activates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `beautiful_pictures`
@@ -439,7 +464,7 @@ ALTER TABLE `enrolls`
 -- AUTO_INCREMENT cho bảng `join_activate`
 --
 ALTER TABLE `join_activate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `news`
@@ -457,7 +482,7 @@ ALTER TABLE `parents`
 -- AUTO_INCREMENT cho bảng `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

@@ -1,3 +1,9 @@
+@php
+use Illuminate\Database\Capsule\Manager as Capsule;
+$setting = Capsule::table('setting')->find(1);
+$news = Capsule::table('news')->take(4)->get();
+// dd($news);
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +37,7 @@
 				<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 					<div class="container">
 						<a class="navbar-brand" href="">
-							<img src="public/image/logo.png" alt="logo" height="50" class="logo">
+							<img src="public/image/{{ $setting->logo }}" alt="logo" height="50" class="logo">
 						</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
@@ -73,7 +79,7 @@
 					<div class="col-lg-3">
 						<h3 class="footer-title">Thông điệp</h3>
 						<hr style="width: 50px;background-color: #18998e;height: 2px;margin: 15px 0;">
-						<p class="footer-desc"></p>
+						<p class="footer-desc">{{ $setting->message_footer }}</p>
 					</div>
 					<div class="col-lg-3">
 						<h3 class="footer-title">Thông tin liên hệ</h3>
@@ -82,22 +88,22 @@
 							<ul class="footer__wrap-info">                           
 								<li>
 									<i class="fas fa-map-marker-alt fa-fw check "></i>
-									<span class="footer__wrap-info--text special">Địa chỉ: </span>
+									<span class="footer__wrap-info--text special">Địa chỉ: {{ $setting->address }}</span>
 								</li>
 								<li>
 									<i class="fas fa-phone-alt fa-fw check"></i>
-									<span class="footer__wrap-info--text">Điện thoại: </span>
+									<span class="footer__wrap-info--text">Điện thoại: {{ $setting->phone }}</span>
 								</li>
 								<li>
 									<i class="far fa-envelope fa-fw
 									check"></i>
-									<span class="footer__wrap-info--text">Email: </span>
+									<span class="footer__wrap-info--text">Email: {{ $setting->email }}</span>
 								</li>
-
+{{-- 
 								<li>
 									<i class="far fa-clock fa-fw check"></i>
 									<span class="footer__wrap-info--text">Working Days/Hours: </span>
-								</li>
+								</li> --}}
 							</ul>
 						</div>
 					</div>
@@ -106,12 +112,13 @@
 
 						<hr style="width: 50px;background-color: #18998e;height: 2px;margin: 15px 0;">
 						<div class="footer-contact">
-							<ul class="footer__wrap-info">
+							<ul class="footer__wrap-info">            
+								@foreach($news as $value)
 								<li>
 									<i class="fas fa-caret-right fa-fw check"></i>
-									<a href="" class="footer__wrap-info--text footer__wrap-info--text2 special"></a>
-								</li>              
-
+									<a href="tin-tuc/{{ $value->slug }}.html" class="footer__wrap-info--text footer__wrap-info--text2 special">{{ $value->title }}</a>
+								</li>  
+								@endforeach
 
 							</ul>
 						</div>
@@ -120,12 +127,12 @@
 						<h3 class="footer-title">Kết nối</h3>
 						<hr style="width: 50px;background-color: #18998e;height: 2px;margin: 15px 0;">
 						<div class="social-footer mb-3">
-							<a href="#" class="icon-button twitter"><i class="icon-twitter fab fa-twitter"></i><span></span></a>
-							<a href="#" class="icon-button facebook"><i class="fab fa-facebook-f icon-facebook"></i><span></span></a>
-							<a href="#" class="icon-button google-plus"><i class="icon-google-plus fab fa-google-plus-g"></i><span></span></a>
-							<a href="#" class="icon-button pinterest"><i class="fab fa-pinterest"></i><span></span></a>
+							{{-- <a href="#" class="icon-button twitter"><i class="icon-twitter fab fa-twitter"></i><span></span></a> --}}
+							<a href="{{ $setting->facebook }}" class="icon-button facebook"><i class="fab fa-facebook-f icon-facebook"></i><span></span></a>
+							<a href="{{ $setting->google }}" class="icon-button google-plus"><i class="icon-google-plus fab fa-google-plus-g"></i><span></span></a>
+							{{-- <a href="#" class="icon-button pinterest"><i class="fab fa-pinterest"></i><span></span></a> --}}
 						</div>
-						<div class="fb-page" data-href="" data-tabs="timeline" data-width="255" data-height="170" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"></div>
+						<div class="fb-page" data-href="{{ $setting->facebook }}" data-tabs="timeline" data-width="255" data-height="170" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"></div>
 					</div>
 				</div>
 				<hr style="background-color: #18998e;height: 1px;width: 70%;margin: 20px auto;">

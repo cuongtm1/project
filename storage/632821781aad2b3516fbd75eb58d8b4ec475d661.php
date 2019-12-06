@@ -36,7 +36,7 @@
 					<div class="col-4">
 						<div class="form-group">
 							<label class="control-label">Ảnh bài viết</label>
-							<img src="http://localhost/Shop_K79/backend/img/import-img.png" alt="" style="max-height: 300px;cursor: pointer;" id="imagenews">
+							<img src="public/images/import-img.png" alt="" style="max-height: 300px;cursor: pointer;" id="imagenews">
 							<input class="form-control" type="file" name="image" onchange="changeImg(this)" id="img" style="display: none">
 						</div>
 					</div>
