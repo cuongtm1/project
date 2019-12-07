@@ -94,12 +94,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                      {{-- {{ dd(count($user->getParent->getChildren)) }} --}}
                       @foreach($user->getParent->getChildren as $value)
                       <tr>
                         <td>{{ $value->fullname }}</td>
                         <td>{{ $value->birthday }}</td>
                         <td>{{ getGender($value->gender) }}</td>
-                        <td>{{ $value->showlop->name }}</td>
+                        <td>{{ checkClass($value->showlop) }}</td>
                       </tr>
                       @endforeach
                     </tbody>

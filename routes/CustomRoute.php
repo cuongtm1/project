@@ -115,6 +115,7 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
 $router->get('lien-he',['App\Controllers\Frontend\ContactController','index']);
+$router->get('chuong-trinh-hoc',['App\Controllers\Frontend\ContactController','learning']);
 $router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
 $router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);
 $dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());

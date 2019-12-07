@@ -12,6 +12,9 @@ class ContactController extends BaseController
 		$data['setting'] = SettingModel::find(1);
 		$this->render('frontend.contact.contact',$data);
 	}
+	function learning(){
+		$this->render('frontend.chuongtrinhhoc');
+	}
 }
 	
 ?>

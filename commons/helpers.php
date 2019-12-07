@@ -84,3 +84,12 @@ function getClassByAge($childrennull){
 // 		return "Đã tham gia";
 // 	}
 // }
+function checkClass($value){
+	// var_dump($value);
+	if($value==null){
+		return "Chưa vào lớp";
+	}
+	if($value!=""){
+		return $value->name;
+	}
+}
