@@ -21,21 +21,48 @@
 
 						{!! $newsDetail->content !!}
 
-						
-						<h1>Comment</h1>
-						@foreach ($comment as $vl )
-						{{ $vl->content }} <br>
-						@endforeach
+
+						<br><br>
+						<h1 style="color:white;background-color:#0b446d;padding: 10px;font-weight: bold">Comment</h1>
+						<table class="table table-striped">
+							<thead>
+							  <tr>
+								<th scope="col">Người Gửi</th>
+								<th scope="col">Nội dung</th>
+								<th scope="col">Ngày gửi</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  
+								<tr>
+								@foreach ($comment as $vl )
+								@foreach ($user as $ten )
+								@if($vl->id_user == $ten->id)
+								<tr>
+								<td>{{ $ten->phone }}</td>
+								<td>{{ $vl->content }}</td>
+								<td>{{ $vl->created_at }}</td>
+							</tr> 
+								@endif
+								@endforeach
+								@endforeach
+							  </tr> 
+
+							</tbody>
+						  </table>
 						<hr>
 						@if(isset($_SESSION['user']))
-						<form action="admin/comment" method="POST">
+						<form action="comment" method="POST">
 						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>
 						<input name="id_new" type="hidden" value="{{ $newsDetail->id }}">
 						<input name="slug" type="hidden" value="{{ $newsDetail->slug }}">
 						<br>
 						<button class="btn btn-info" >Gửi</button>
 						</form>
+						@else
+						<h1 style="color:blue">Bạn cần đăng nhập để có thể comment.</h1>
 						@endif
+						
 
 
 

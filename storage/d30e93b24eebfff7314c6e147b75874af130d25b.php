@@ -21,21 +21,48 @@
 						<?php echo $newsDetail->content; ?>
 
 
-						
-						<h1>Comment</h1>
-						<?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-						<?php echo e($vl->content); ?> <br>
-						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+						<br><br>
+						<h1 style="color:white;background-color:#0b446d;padding: 10px;font-weight: bold">Comment</h1>
+						<table class="table table-striped">
+							<thead>
+							  <tr>
+								<th scope="col">Người Gửi</th>
+								<th scope="col">Nội dung</th>
+								<th scope="col">Ngày gửi</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  
+								<tr>
+								<?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ten): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php if($vl->id_user == $ten->id): ?>
+								<tr>
+								<td><?php echo e($ten->phone); ?></td>
+								<td><?php echo e($vl->content); ?></td>
+								<td><?php echo e($vl->created_at); ?></td>
+							</tr> 
+								<?php endif; ?>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							  </tr> 
+
+							</tbody>
+						  </table>
 						<hr>
 						<?php if(isset($_SESSION['user'])): ?>
-						<form action="admin/comment" method="POST">
+						<form action="comment" method="POST">
 						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>
 						<input name="id_new" type="hidden" value="<?php echo e($newsDetail->id); ?>">
 						<input name="slug" type="hidden" value="<?php echo e($newsDetail->slug); ?>">
 						<br>
 						<button class="btn btn-info" >Gửi</button>
 						</form>
+						<?php else: ?>
+						<h1 style="color:blue">Bạn cần đăng nhập để có thể comment.</h1>
 						<?php endif; ?>
+						
 
 
 

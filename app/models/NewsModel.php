@@ -7,5 +7,9 @@ class NewsModel extends Model{
 	{
 	    return $this->belongsTo('App\models\categoryModel', 'cate_id', 'id');
 	}
+	public function getComment()
+	{
+		return $this->hasMany('App\models\commentModel', 'id_news', 'id');
+	}
 }
 ?> 

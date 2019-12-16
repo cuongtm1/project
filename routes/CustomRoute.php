@@ -124,10 +124,12 @@ class CustomRoute{
 					$router->get('add',['App\Controllers\Backend\imageController','add']);
 					$router->POST('saveadd',['App\Controllers\Backend\imageController','save_add']);
 				});
-
 				$router->group(['prefix'=>'comment'],function($router){
-					$router->POST('',['App\Controllers\Backend\commentController','add']);
+					$router->get('',['App\Controllers\Backend\commentController','index']);
+					$router->get('detail/{id}',['App\Controllers\Backend\commentController','detail']);
+					$router->get('del/{id}/{id_new}',['App\Controllers\Backend\commentController','del']);
 				});
+
 
 			});
 		});
@@ -142,6 +144,7 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
 
+$router->POST('comment',['App\Controllers\Backend\commentController','add']);
 
 $router->group(['prefix'=>'lien-he'],function($router){
 	$router->get('',['App\Controllers\Frontend\ContactController','index']);
