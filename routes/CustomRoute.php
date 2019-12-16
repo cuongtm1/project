@@ -47,6 +47,8 @@ class CustomRoute{
 				$router->get('/', ["App\Controllers\Backend\HomeController", "index"]);
 				$router->get('setting', ["App\Controllers\Backend\HomeController", "setting"]);
 				$router->post('setting', ["App\Controllers\Backend\HomeController", "postSetting"]);
+
+
 				$router->group(['prefix'=>'phu-huynh'],function($router){
 					$router->get('thong-tin',['App\Controllers\Backend\ParentController','show']);
 					$router->get('add',['App\Controllers\Backend\ParentController','add']);
@@ -127,10 +129,12 @@ class CustomRoute{
 					$router->get('chi-tiet/{id}',['App\Controllers\Backend\imageController','chitiet']);
 					$router->POST('saveadd',['App\Controllers\Backend\imageController','save_add']);
 				});
-
 				$router->group(['prefix'=>'comment'],function($router){
-					$router->POST('',['App\Controllers\Backend\commentController','add']);
+					$router->get('',['App\Controllers\Backend\commentController','index']);
+					$router->get('detail/{id}',['App\Controllers\Backend\commentController','detail']);
+					$router->get('del/{id}/{id_new}',['App\Controllers\Backend\commentController','del']);
 				});
+
 
 			});
 		});
@@ -149,8 +153,13 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 });
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
+
 $router->get('anh-dep/{id}',['App\Controllers\Frontend\HomeController','anhdep']);
 
+$router->get('tuyensinh',['App\Controllers\Frontend\HomeController','tuyensinh']);
+
+
+$router->POST('comment',['App\Controllers\Backend\commentController','add']);
 
 $router->group(['prefix'=>'lien-he'],function($router){
 	$router->get('',['App\Controllers\Frontend\ContactController','index']);

@@ -7,7 +7,7 @@
   <meta property="twitter:site" content="@pratikborsadiya">
   <meta property="twitter:creator" content="@pratikborsadiya">
   <!-- Open Graph Meta-->
-  <base href="{{ BASE_URL }}">
+  <base href="<?php echo e(BASE_URL); ?>">
   <link rel="stylesheet" type="text/css" href="public/css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vali Admin">
@@ -91,19 +91,19 @@
                 <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
                   <div>
                     <p class="app-sidebar__user-name">Nhóm 2</p>
-                    {{-- <p class="app-sidebar__user-designation">Frontend Developer</p> --}}
+                    
                   </div>
                 </div>
                 <ul class="app-menu">
-                  <li ><a class="app-menu__item @yield('trangchu')" href="admin"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">Trang chủ</span></a></li>
-                  <li class="treeview @yield('info')"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('trangchu'); ?>" href="admin"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">Trang chủ</span></a></li>
+                  <li class="treeview <?php echo $__env->yieldContent('info'); ?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị thông tin</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/phu-huynh/thong-tin"><i class="icon fa fa-circle-o"></i>Phụ huynh</a></li>
                        <li><a class="treeview-item" href="admin/Childrens"><i class="icon fa fa-circle-o"></i>Học sinh</a></li>
                        <li><a class="treeview-item" href="admin/class"><i class="icon fa fa-circle-o"></i>Lớp Học</a></li>
                     </ul>
                   </li>
-                  <li class="treeview @yield('news')"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                  <li class="treeview <?php echo $__env->yieldContent('news'); ?>"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Quản trị tin tức</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                     <ul class="treeview-menu">
                       <li><a class="treeview-item" href="admin/tin-tuc/danh-sach"><i class="icon fa fa-circle-o"></i>Danh sách tin tức</a></li>
                        <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
@@ -112,20 +112,16 @@
 
 
                   
-                   <li ><a class="app-menu__item @yield('contact')" href="admin/lien-he/"><i class="app-menu__icon fa fa-github"></i><span class="app-menu__label">Danh sách liên hệ</span></a></li>
-                  <li ><a class="app-menu__item @yield('acti')" href="admin/activate"><i class="app-menu__icon fa fa-gamepad"></i><span class="app-menu__label">Quản trị hoạt động</span></a></li>
-<<<<<<< HEAD
-                  <li ><a class="app-menu__item @yield('album')" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">Album ảnh đẹp</span></a></li>
-=======
-                  <li ><a class="app-menu__item @yield('comment')" href="admin/comment/"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Quản trị bình luận</span></a></li>
-                  <li ><a class="app-menu__item @yield('image')" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">images</span></a></li>
->>>>>>> phuc
-                  <li ><a class="app-menu__item @yield('setting')" href="admin/setting"><i class="app-menu__icon fa fa-cog fa-lg"></i><span class="app-menu__label">Setting</span></a></li>
+                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('contact'); ?>" href="admin/lien-he/"><i class="app-menu__icon fa fa-github"></i><span class="app-menu__label">Danh sách liên hệ</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('acti'); ?>" href="admin/activate"><i class="app-menu__icon fa fa-gamepad"></i><span class="app-menu__label">Quản trị hoạt động</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('comment'); ?>" href="admin/comment/"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Quản trị bình luận</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('image'); ?>" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">images</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('setting'); ?>" href="admin/setting"><i class="app-menu__icon fa fa-cog fa-lg"></i><span class="app-menu__label">Setting</span></a></li>
 
                 </ul>
               </aside>
               <script src="public/js/jquery-3.2.1.min.js"></script>
-              @yield('content')
+              <?php echo $__env->yieldContent('content'); ?>
               <!-- Essential javascripts for application to work-->
               <script src="public/js/jquery-3.2.1.min.js"></script>
               <script src="public/js/popper.min.js"></script>
@@ -196,4 +192,4 @@
            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js" type="text/javascript" charset="utf-8" async defer></script>
            <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
          </body>
-         </html>
+         </html><?php /**PATH C:\xampp\htdocs\project1\views/backend/master/masterlayout.blade.php ENDPATH**/ ?>

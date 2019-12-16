@@ -1,5 +1,4 @@
-@extends('frontend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="plan">
 			<div class="container">
 				<h3 class="plan-text">
@@ -17,9 +16,10 @@
 				<div class="row">
 					<div class="col-12 col-lg-8 plan-detail-text">
 						<h4 style="text-shadow: 0px 0px 1px;
-						">{{ $newsDetail->title }}</h4>
+						"><?php echo e($newsDetail->title); ?></h4>
 
-						{!! $newsDetail->content !!}
+						<?php echo $newsDetail->content; ?>
+
 
 
 						<br><br>
@@ -35,17 +35,17 @@
 							<tbody>
 							  
 								<tr>
-								@foreach ($comment as $vl )
-								@foreach ($user as $ten )
-								@if($vl->id_user == $ten->id)
+								<?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ten): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<?php if($vl->id_user == $ten->id): ?>
 								<tr>
-								<td>{{ $ten->phone }}</td>
-								<td>{{ $vl->content }}</td>
-								<td>{{ $vl->created_at }}</td>
+								<td><?php echo e($ten->phone); ?></td>
+								<td><?php echo e($vl->content); ?></td>
+								<td><?php echo e($vl->created_at); ?></td>
 							</tr> 
-								@endif
-								@endforeach
-								@endforeach
+								<?php endif; ?>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 							  </tr> 
 
 							</tbody>
@@ -53,17 +53,17 @@
 						  <br>
 						  <br>
 						  <br>
-						@if(isset($_SESSION['user']))
+						<?php if(isset($_SESSION['user'])): ?>
 						<form action="comment" method="POST">
 						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>
-						<input name="id_new" type="hidden" value="{{ $newsDetail->id }}">
-						<input name="slug" type="hidden" value="{{ $newsDetail->slug }}">
+						<input name="id_new" type="hidden" value="<?php echo e($newsDetail->id); ?>">
+						<input name="slug" type="hidden" value="<?php echo e($newsDetail->slug); ?>">
 						<br>
 						<button class="btn btn-info" >Gửi</button>
 						</form>
-						@else
+						<?php else: ?>
 						<h1 style="color:blue">Bạn cần đăng nhập để có thể comment.</h1>
-						@endif
+						<?php endif; ?>
 						
 
 
@@ -123,4 +123,5 @@
 				</div>	
 			</div>
 		</div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\project1\views/frontend/news/details.blade.php ENDPATH**/ ?>

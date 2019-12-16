@@ -16,6 +16,8 @@ class NewsController extends BaseController
 		$data['newsDetail'] = NewsModel::where('slug',$slug)->first();
 		$data['comment'] =commentModel::where('id_news',$data['newsDetail']->id)->get();
 		// $data['user'] =UserModel::where('id',$data['comment']->id)->get();
+		$data['user']=UserModel::all();
+
 		$this->render('frontend.news.details',$data);
 	}
 }
