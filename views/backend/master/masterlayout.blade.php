@@ -114,7 +114,7 @@
                   
                    <li ><a class="app-menu__item @yield('contact')" href="admin/lien-he/"><i class="app-menu__icon fa fa-github"></i><span class="app-menu__label">Danh sách liên hệ</span></a></li>
                   <li ><a class="app-menu__item @yield('acti')" href="admin/activate"><i class="app-menu__icon fa fa-gamepad"></i><span class="app-menu__label">Quản trị hoạt động</span></a></li>
-                  <li ><a class="app-menu__item @yield('image')" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">images</span></a></li>
+                  <li ><a class="app-menu__item @yield('album')" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">Album ảnh đẹp</span></a></li>
                   <li ><a class="app-menu__item @yield('setting')" href="admin/setting"><i class="app-menu__icon fa fa-cog fa-lg"></i><span class="app-menu__label">Setting</span></a></li>
 
                 </ul>

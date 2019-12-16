@@ -1,5 +1,5 @@
 @extends('backend.master.masterlayout')
-@section('contact','is-expanded')
+@section('contact','active')
 @section('content')
     <main class="app-content">
       <div class="app-title">

@@ -1,27 +1,32 @@
 @extends('backend.master.masterlayout')
-@section('image','is-expanded')
+@section('album','active')
 @section('content')
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <main class="app-content">
 	<div class="app-title">
 		<div>
-			<h1><i class="fa fa-edit"></i> Thêm tin tức mới</h1>
+			<h1><i class="fa fa-edit"></i> Thêm Album</h1>
 		</div>
-  </div>
+	</div>
 	<div class="tile">
-    {{ sss("ok") }}
+		{{ sss("ok") }}
 		<div class="tile-body">
 			<form method="post" action="admin/image/saveadd"  enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-12">
 						<div class="form-group">
-							<label class="control-label">Chọn Ảnh Mới</label>
-							<center><img src="public/images/import-img.png" alt="" style="max-height: 300px;cursor: pointer;" id="imagenews"></center>
-							<input class="form-control" type="file" name="image" onchange="changeImg(this)" id="img" style="display: none">
+							<label class="control-label">Tiêu đề album</label>
+							<input class="form-control" type="text" placeholder="Nhập tiêu đề bài viết" name="title">
 						</div>
 					</div>
-        </div>
-        
+					<div class="col-12">
+						<div class="form-group">
+							<label class="control-label">Ảnh album (Chọn được nhiều ảnh) : </label>
+							<input type="file" name="image[]" multiple>
+						</div>
+					</div>
+				</div>
+
 				<div class="tile-footer">
 					<button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Thêm</button>
 				</div>

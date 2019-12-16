@@ -103,6 +103,7 @@ if(!isset($_SESSION['user'])){
                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('hoso'); ?>" href="phu-huynh"><i class="app-menu__icon fa fa-address-card-o"></i><span class="app-menu__label">Hồ sơ</span></a></li>
                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('edithoso'); ?>" href="phu-huynh/edit"><i class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">Sửa Hồ sơ</span></a></li>
                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('joinactivate'); ?>" href="phu-huynh/tham-gia-hoat-dong/"><i class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">Tham gia hoạt động</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('infomationstudents'); ?>" href="phu-huynh/hoc-sinh/"><i class="app-menu__icon fa fa-address-card"></i><span class="app-menu__label">Thông tin học sinh</span></a></li>
                 </ul>
               </aside>
               <script src="public/js/jquery-3.2.1.min.js"></script>

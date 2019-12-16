@@ -20,6 +20,31 @@
 
 						<?php echo $newsDetail->content; ?>
 
+
+						
+						<h1>Comment</h1>
+						<?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<?php echo e($vl->content); ?> <br>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						<hr>
+						<?php if(isset($_SESSION['user'])): ?>
+						<form action="admin/comment" method="POST">
+						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>
+						<input name="id_new" type="hidden" value="<?php echo e($newsDetail->id); ?>">
+						<input name="slug" type="hidden" value="<?php echo e($newsDetail->slug); ?>">
+						<br>
+						<button class="btn btn-info" >Gửi</button>
+						</form>
+						<?php endif; ?>
+
+
+
+
+
+
+
+
+
 					</div>
 					<div class="col-lg-4">
 						<div class="news-transfer-list">

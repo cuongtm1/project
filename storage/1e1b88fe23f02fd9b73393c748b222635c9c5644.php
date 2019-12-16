@@ -34,7 +34,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>STT</th>
+                    <th>Tên học sinh</th>
                     <th>Ngày sinh</th>
                     <th>Thường trú</th>
                     <th>Nơi sinh</th>
@@ -48,7 +48,7 @@
                   <?php $__currentLoopData = $parent->getChildren; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $children): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
                   <tr>
-                    <td><?php echo e($i++); ?></td>
+                    <td><?php echo e($children->fullname); ?></td>
                     <td><?php echo e($children->birthday); ?></td>
                     <td><?php echo e($children->permanent_residence); ?></td>
                     <td><?php echo e($children->place_of_birth); ?></td>

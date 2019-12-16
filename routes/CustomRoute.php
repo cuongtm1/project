@@ -119,9 +119,12 @@ class CustomRoute{
 				$router->group(['prefix'=>'image'],function($router){
 					$router->get('',['App\Controllers\Backend\imageController','index']);
 					$router->get('del/{id}',['App\Controllers\Backend\imageController','del']);
+					$router->get('beautifuls/del/{id}',['App\Controllers\Backend\imageController','beautifulsdel']);
+					$router->get('beautifuls/add/{id}',['App\Controllers\Backend\imageController','beautifulsadd']);
 					$router->get('edit/{id}',['App\Controllers\Backend\imageController','edit']);
 					$router->POST('edit',['App\Controllers\Backend\imageController','post_edit']);
 					$router->get('add',['App\Controllers\Backend\imageController','add']);
+					$router->get('chi-tiet/{id}',['App\Controllers\Backend\imageController','chitiet']);
 					$router->POST('saveadd',['App\Controllers\Backend\imageController','save_add']);
 				});
 
@@ -138,9 +141,15 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 	$router->get('tham-gia-hoat-dong',['App\Controllers\Backend\Parents\HomeController','joinactivate']);
 	$router->post('tham-gia-hoat-dong/{id}',['App\Controllers\Backend\Parents\HomeController','postjoinactivate']);
 	$router->post('edit',['App\Controllers\Backend\Parents\HomeController','postEdit']);
+
+	$router->get('hoc-sinh',['App\Controllers\Backend\Parents\StudentController','listStudents']);
+	$router->get('hoc-sinh/hoat-dong/{id}',['App\Controllers\Backend\Parents\StudentController','hoatdong']);
+	$router->get('hoc-sinh/lich-hoc/{id}',['App\Controllers\Backend\Parents\StudentController','lichhoc']);
+	$router->get('hoc-sinh/an-uong/{id}',['App\Controllers\Backend\Parents\StudentController','anuong']);
 });
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
+$router->get('anh-dep/{id}',['App\Controllers\Frontend\HomeController','anhdep']);
 
 
 $router->group(['prefix'=>'lien-he'],function($router){

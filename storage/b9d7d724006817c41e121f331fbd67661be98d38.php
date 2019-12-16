@@ -1,5 +1,5 @@
 <?php $__env->startSection('joinactivate','active'); ?>
-<?php $__env->startSection('content'); ?>acti
+<?php $__env->startSection('content'); ?>
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <main class="app-content">
 	<div class="app-title">

@@ -98,74 +98,18 @@
 					<p>Ảnh đẹp các sự kiện của trường mầm non Ánh Mai Sáng</p>
 				</div>
 				<div class="row">
+					<?php $__currentLoopData = $anhdep; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
 						<div class="grid">
 							<figure class="effect-jazz">
-								<img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-2.jpg" alt="" width="350" height="246">
+								<img src="public/beautifuls/<?php echo e(getFirstIMG($value->getPicture)); ?>" alt="" width="350" height="246">
 								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
+									<h2><a href="anh-dep/<?php echo e($value->id); ?>"><?php echo e($value->title); ?></a></h2>
 								</figcaption>			
 							</figure>
 						</div>
-						
 					</div>
-					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
-						<div class="grid">
-							<figure class="effect-jazz">
-								<img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-3.jpg" alt="" width="350" height="246">
-								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
-								</figcaption>			
-							</figure>
-						</div>
-						
-					</div>
-					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
-						<div class="grid">
-							<figure class="effect-jazz">
-								<img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-7.jpg" alt="" width="350" height="246">
-								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
-								</figcaption>			
-							</figure>
-						</div>
-						
-					</div>
-					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
-						<div class="grid">
-							<figure class="effect-jazz">
-								<img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-5.jpg" alt="" width="350" height="246">
-								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
-								</figcaption>		
-							</figure>
-						</div>
-						
-					</div>
-					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
-						<div class="grid">
-							<figure class="effect-jazz">
-								<img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-6.jpg" alt="" width="350" height="246">
-								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
-								</figcaption>			
-							</figure>
-							
-						</div>
-						
-					</div>
-					<div class="col-12 col-sm-12 col-md-6 col-lg-4 project-block">
-						<div class="grid">
-							<figure class="effect-jazz">
-								<a href=""><img src="https://truongmamnonbambi.edu.vn/wp-content/uploads/2019/04/anh-bambi-8.jpg" alt="" width="350" height="246"></a>
-								<figcaption>
-									<h2><a href="">Khai giảng trường mầm non Ánh Mai Sáng</a></h2>
-								</figcaption>		
-							</figure>
-							
-						</div>
-						
-					</div>
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				</div>
 			</div>
 		</div>

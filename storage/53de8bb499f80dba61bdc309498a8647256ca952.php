@@ -23,7 +23,7 @@
 								<th>Tên hoạt động</th>
 								<th>Ngày bắt đầu</th>
 								<th>Ngày kết thúc</th>
-								<th>Số lượng tham gia</th>
+								<th>Số lượng tham gia (đang chờ)</th>
 								<th><a class="btn btn-info" href="admin/activate/add">Thêm hoạt động</a> </th>
 							</tr>
 						</thead>
@@ -50,4 +50,12 @@
 </main>
 <script src="public/js/validate.js" type="text/javascript" charset="utf-8" async defer></script>
 <?php $__env->stopSection(); ?> 
+
+
+<script>
+	function del(){
+		let xoa=confirm("Bạn muốn xóa không");
+		return xoa;
+	}
+</script>
 <?php echo $__env->make('backend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/backend/activate/list.blade.php ENDPATH**/ ?>

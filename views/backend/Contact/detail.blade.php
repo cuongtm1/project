@@ -1,5 +1,5 @@
 @extends('backend.master.masterlayout')
-@section('contact','is-expanded')
+@section('contact','active')
 @section('content')
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <main class="app-content">

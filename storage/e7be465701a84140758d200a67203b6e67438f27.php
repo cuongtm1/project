@@ -1,4 +1,4 @@
-<?php $__env->startSection('image','is-expanded'); ?>
+<?php $__env->startSection('album','active'); ?>
 <?php $__env->startSection('content'); ?>
     <main class="app-content">
       <div class="app-title">
@@ -11,6 +11,10 @@
           <li class="breadcrumb-item active"><a href="#"></a></li>
         </ul>
       </div>
+      <?php echo e(sss('delImage')); ?>
+
+      <?php echo e(sss('addAlbum')); ?>
+
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
@@ -18,21 +22,21 @@
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th> Hình Ảnh</th>
-                    <th><a class="btn btn-info" href="admin/image/add">Thêm Ảnh</a> </th>
+                    <th> Tiêu đề</th>
+                    <th> Số lượng ảnh</th>
+                    <th><a class="btn btn-info" href="admin/image/add">Thêm Album</a> </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($show as $key => $value):?>
+                  <?php $__currentLoopData = $show; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <tr>
-                    <td><img width="150px" src="public/image/<?php echo e($value->image); ?>" alt=""></td>
-                    
-
-                    <td><a class="btn btn-success" href="admin/image/edit/<?=$value->id  ?>">Sửa</a>
-                    <a onclick=" return del()" class="btn btn-danger" href="admin/image/del/<?=$value->id  ?>">xóa</a>
+                    <td><?php echo e($value->title); ?></td>
+                    <td><?php echo e(count($value->getPicture)); ?></td>
+                    <td><a class="btn btn-success" href="admin/image/chi-tiet/<?php echo e($value->id); ?>">chi tiết</a>
+                    <a onclick="return del()" class="btn btn-danger" href="admin/image/del/<?php echo e($value->id); ?>">xóa</a>
                     </td>
                   </tr>
-                  <?php endforeach?>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
               </table>
             </div>

@@ -35,7 +35,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>STT</th>
+                    <th>Tên học sinh</th>
                     <th>Ngày sinh</th>
                     <th>Thường trú</th>
                     <th>Nơi sinh</th>
@@ -49,7 +49,7 @@
                   @foreach($parent->getChildren as $children)
 
                   <tr>
-                    <td>{{ $i++ }}</td>
+                    <td>{{ $children->fullname }}</td>
                     <td>{{ $children->birthday }}</td>
                     <td>{{ $children->permanent_residence }}</td>
                     <td>{{ $children->place_of_birth }}</td>

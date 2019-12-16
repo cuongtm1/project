@@ -2,6 +2,10 @@
 namespace App\Controllers\Backend;
 use App\Controllers\BaseController;
 use App\Models\{ParentModel,UserModel};
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 /**
  * 
  */
@@ -47,6 +51,40 @@ class ParentController extends BaseController
 		$parent->save();
 		ss('addparent','Thêm thành công phụ huynh');
 		header('location:'.BASE_URL.'admin/phu-huynh/thong-tin');
+
+		//send emai khi them thanh cong tai khoan
+
+		$mail = new PHPMailer(true);
+		$mail->CharSet = 'UTF-8';
+		$mail->isSMTP(); 
+		$mail->Host       = 'smtp.gmail.com';
+		$mail->SMTPAuth   = true;
+		$mail->Username = 'cuongtmph06947@gmail.com';
+		$mail->Password = '12manhcuong';
+		$mail->SMTPSecure = 'tls';
+		$mail->Port = 587;
+		$mail->SMTPOptions = array(
+			'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+				'allow_self_signed' => true
+			)
+		);                                   
+		$mail->setFrom('cuongtmph06947@gmail.com', 'Ánh Mai Sáng');
+		$mail->addAddress($email);
+		$mail->isHTML(true);
+		$mail->Subject = 'Thông tin tài khoản - Trường mầm non Ánh Mai Sáng';
+		$mail->Body    = "
+		Xin chào $phone
+		<br><br>
+		Đây là một email tự động của trường mầm non ánh mai sáng. Chúng tôi gửi bạn thông tin tài khoản để bạn có thể theo dõi và đăng ký các hoạt động trực tuyến cho các con đang theo học tại trường mầm non Ánh Mai Sáng
+		<br><br>
+		user : $phone<br>
+		pass : $password
+		<br>
+		Liên kết để thực hiện đăng nhập : http://localhost/project1/login
+		";
+		$mail->send();
 	}
 	function edit($id){
 		$data['user'] = UserModel::find($id);

@@ -93,3 +93,20 @@ function checkClass($value){
 		return $value->name;
 	}
 }
+function status_activate($number){
+	if($number==0){
+		$status = 'Đang xét duyệt';
+	}
+	if($number==1){
+		$status = 'Đã tham gia';
+	}
+	return $status;
+}
+function getFirstIMG($data){
+	foreach($data as $key=>$value){
+		if($key>=0){
+			return $data[0]->image;
+		}
+	}
+
+}

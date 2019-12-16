@@ -1,6 +1,6 @@
 @extends('backend.phuhuynh.master.masterlayout')
 @section('joinactivate','active')
-@section('content')acti
+@section('content')
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <main class="app-content">
 	<div class="app-title">
