@@ -29,6 +29,7 @@ class loginController extends BaseController
         }else{
             $_SESSION['user']=[
                 'role'=>$user->role,
+                'id'=>$user->id,
                 'phone'=>$user->phone,
             ];
             header("location:".BASE_URL."admin");

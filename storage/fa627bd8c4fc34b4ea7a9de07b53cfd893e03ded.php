@@ -18,14 +18,14 @@
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th> Hình Ảnh</th>
-                    <th><a class="btn btn-info" href="admin/image/add">Thêm Ảnh</a> </th>
+                    <th> Group Ảnh</th>
+                    <th><a class="btn btn-info" href="admin/image/add">Thêm Group Ảnh</a> </th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($show as $key => $value):?>
                   <tr>
-                    <td><img width="150px" src="public/image/<?php echo e($value->image); ?>" alt=""></td>
+                    <td><?php echo e($value->name); ?></td>
                     
 
                     <td><a class="btn btn-success" href="admin/image/edit/<?=$value->id  ?>">Sửa</a>
