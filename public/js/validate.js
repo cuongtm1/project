@@ -105,4 +105,16 @@ $(document).ready(function() {
 			editor1: "Chưa nhập nội dung",
 		}
 	});
+	$("#contactForm1").validate({
+			rules: {
+				name: {
+					required: true,
+				}
+			},
+			messages: {
+				name: {
+					required: "We need your email address to contact you",
+				}
+			}
+		});
 });

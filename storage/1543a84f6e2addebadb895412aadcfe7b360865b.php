@@ -109,8 +109,14 @@
                        <li><a class="treeview-item" href="admin/category"><i class="icon fa fa-circle-o"></i>Danh mục</a></li>
                     </ul>
                   </li>
+
+
+                  
+                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('contact'); ?>" href="admin/lien-he/"><i class="app-menu__icon fa fa-github"></i><span class="app-menu__label">Danh sách liên hệ</span></a></li>
                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('acti'); ?>" href="admin/activate"><i class="app-menu__icon fa fa-gamepad"></i><span class="app-menu__label">Quản trị hoạt động</span></a></li>
+                  <li ><a class="app-menu__item <?php echo $__env->yieldContent('image'); ?>" href="admin/image/"><i class="app-menu__icon fa fa-image"></i><span class="app-menu__label">images</span></a></li>
                   <li ><a class="app-menu__item <?php echo $__env->yieldContent('setting'); ?>" href="admin/setting"><i class="app-menu__icon fa fa-cog fa-lg"></i><span class="app-menu__label">Setting</span></a></li>
+
                 </ul>
               </aside>
               <script src="public/js/jquery-3.2.1.min.js"></script>

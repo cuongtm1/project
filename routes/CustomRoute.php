@@ -33,8 +33,14 @@ class CustomRoute{
 		$router->group(['before' => 'login'], function($router){
 			$router->get('login',['App\Controllers\Backend\loginController','login']);
 		});
+
 		$router->POST('login',['App\Controllers\Backend\loginController','postlogin']);
 		$router->get('logout',['App\Controllers\Backend\loginController','loguot']);
+		// forgot password
+		$router->post('forgotpassword',['App\Controllers\Backend\loginController','forgot']);
+		$router->get('forgotpassword/{token}',['App\Controllers\Backend\loginController','getforgotPassword']);
+		$router->post('confirmpassword',['App\Controllers\Backend\loginController','confirmpassword']);
+		// end forgot
 		$router->group(['before' => 'auth'], function($router){
 			// admin
 			$router->group(['prefix'=>'admin'],function($router){

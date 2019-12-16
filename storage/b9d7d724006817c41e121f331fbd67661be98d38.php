@@ -9,6 +9,8 @@
 	</div>
 	<?php echo e(sss('joinactive')); ?>
 
+	<?php echo e(sss('joinactive-False')); ?>
+
 
 	<div class="row">
 		<div class="col-md-12">
@@ -26,7 +28,10 @@
 							</tr>
 						</thead>
 						<tbody>
+							
+
 							<?php $__currentLoopData = $activate; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<?php if($value->stop >= $date): ?>
 							<form action="phu-huynh/tham-gia-hoat-dong/<?php echo e($value->id); ?>" method="post" accept-charset="utf-8">
 								<tr>
 									<td><?php echo e($value->activate); ?></td>
@@ -44,6 +49,7 @@
 									</td>
 								</tr>
 							</form>
+							<?php endif; ?>
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 						</tbody>
 					</table>

@@ -52,8 +52,15 @@ function send_ok(){
     $mail->Username = 'trantienphuchgvt@gmail.com';
     $mail->Password = 'trantienphuc';
     $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;                                    
-    $mail->setFrom('phucttph07004@gmail.com', 'PHUCTTPH07004');
+    $mail->Port = 587;   
+    $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );                                  
+    $mail->setFrom('phucttph07004@gmail.com', 'Ánh Mai Sáng');
     $emails = explode(",",$email);
     foreach ($emails as $e) {
         $mail->addAddress($e);

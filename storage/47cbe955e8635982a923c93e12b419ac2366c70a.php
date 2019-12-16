@@ -41,11 +41,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-12">
-<<<<<<< HEAD
-					<form id="contactForm">
-=======
-					<form method="POST" action="lien-he/post-lien-he" id="Contactform">
->>>>>>> af1595b4d9dfa532f209be0064c20ea918325932
+					<form id="contactForm1" method="POST" action="lien-he/post-lien-he">
 						<div class="form-group form-group-contact">
 							<label for="name" style="margin-top: 5px;">Tên của bạn</label>
 							<input type="text" name="name"  class="form-control" id="name" placeholder="Tên của bạn">
@@ -66,7 +62,7 @@
 							<label for="exampleFormControlTextarea1">Nội dung</label>
 							<textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Thông điệp"></textarea>
 						</div>
-						<button style="background-color: #18998e;border-color: #fff;box-shadow: none;outline: none;" type="submit" class="btn btn-primary" onclick="window.alert('Gửi thành công!')">Gửi</button>
+						<button style="background-color: #18998e;border-color: #fff;box-shadow: none;outline: none;" type="submit" class="btn btn-primary">Gửi</button>
 					</form>
 
 				</div>
@@ -74,46 +70,10 @@
 		</div>
 	</div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="public/js/validate.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	document.querySelector('iframe').style.width = '100%';
-<<<<<<< HEAD
-	jQuery(document).ready(function($) {
-		$("#contactForm").validate({
-			rules: {
-				title: "required",
-				description: "required",
-				editor1: "required",
-			},
-			messages: {
-				title: "Chưa nhập tiêu đề",
-				description: "Chưa nhập mô tả",
-				editor1: "Chưa nhập nội dung",
-			}
-		});
-	});
-=======
-
-	// validate form
-	$(document).ready(function() {
-            $("#Contactform").validate({
-                rules: {
-                    name: {
-                        required: true,
-                        minlength: 6,
-                    }
-                },
-                messages: {
-                    name: {
-                        required: "Vui lòng nhập tên",
-                        minlength: "không nhập dưới 6 ký tự"
-                    }
-                }
-            });
-        });
-
-
->>>>>>> af1595b4d9dfa532f209be0064c20ea918325932
 </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('frontend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\project1\views/frontend/contact/contact.blade.php ENDPATH**/ ?>
