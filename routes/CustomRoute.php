@@ -125,6 +125,10 @@ class CustomRoute{
 					$router->POST('saveadd',['App\Controllers\Backend\imageController','save_add']);
 				});
 
+				$router->group(['prefix'=>'comment'],function($router){
+					$router->POST('',['App\Controllers\Backend\commentController','add']);
+				});
+
 			});
 		});
 		// Parents
@@ -149,6 +153,10 @@ $router->group(['prefix'=>'lien-he'],function($router){
 $router->get('chuong-trinh-hoc',['App\Controllers\Frontend\ContactController','learning']);
 $router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
 $router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);
+
+
+
+
 $dispatcher = new \Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($url, PHP_URL_PATH));
 echo $response;

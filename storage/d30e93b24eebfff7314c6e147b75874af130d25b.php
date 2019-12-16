@@ -1,5 +1,4 @@
-@extends('frontend.master.masterlayout')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="plan">
 			<div class="container">
 				<h3 class="plan-text">
@@ -17,25 +16,26 @@
 				<div class="row">
 					<div class="col-12 col-lg-8 plan-detail-text">
 						<h4 style="text-shadow: 0px 0px 1px;
-						">{{ $newsDetail->title }}</h4>
+						"><?php echo e($newsDetail->title); ?></h4>
 
-						{!! $newsDetail->content !!}
+						<?php echo $newsDetail->content; ?>
+
 
 						
 						<h1>Comment</h1>
-						@foreach ($comment as $vl )
-						{{ $vl->content }} <br>
-						@endforeach
+						<?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<?php echo e($vl->content); ?> <br>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 						<hr>
-						@if(isset($_SESSION['user']))
+						<?php if(isset($_SESSION['user'])): ?>
 						<form action="admin/comment" method="POST">
 						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>
-						<input name="id_new" type="hidden" value="{{ $newsDetail->id }}">
-						<input name="slug" type="hidden" value="{{ $newsDetail->slug }}">
+						<input name="id_new" type="hidden" value="<?php echo e($newsDetail->id); ?>">
+						<input name="slug" type="hidden" value="<?php echo e($newsDetail->slug); ?>">
 						<br>
 						<button class="btn btn-info" >Gửi</button>
 						</form>
-						@endif
+						<?php endif; ?>
 
 
 
@@ -94,4 +94,5 @@
 				</div>	
 			</div>
 		</div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.master.masterlayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\project1\views/frontend/news/details.blade.php ENDPATH**/ ?>
