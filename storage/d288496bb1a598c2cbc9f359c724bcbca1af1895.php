@@ -28,35 +28,19 @@
 			</div>
 			<div class="about-block">
 				<div class="row">
-					<div class="col-12 col-sm-12 col-md-12 col-lg-4 about-block-detail">
-						<div class="wrapper-img-1">
+
+					<?php $__currentLoopData = $vechungtoi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+					<div style="line-height: 2;text-align:justify" class="col-12 col-sm-12 col-md-12 col-lg-4 about-block-detail">
+							<img height="250px" width="100%" src="public/image/<?php echo e($vl->image); ?>">
 							<div class="ribbon-wrapper-green">
 								<div class="ribbon-green">NEW</div>
 							</div>
-						</div>
-						<h3 class="about-block-detail-title">Chúng tôi là ai</h3>
-						<p class="about-block-detail-desc"><b>Ánh Mai Sáng</b> có đội ngũ cán bộ mang trong mình trọn vẹn nhiệt huyết của tuổi thanh xuân cùng sự sáng tạo không ngừng của những người đam mê thành công. Với môi trường làm việc đa dạng, khuyến khích nhân viên nâng cao trình độ chuyên môn, chúng tôi luôn hướng tới giá trị sau cùng là phục vụ cho quý khách hàng những dịch vụ tốt nhất về Bất động sản.</p>
+						<h3 class="about-block-detail-title"><?php echo e($vl->title); ?></h3>
+						<p class="about-block-detail-desc"><?php echo $vl->content; ?></p>
 					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-4 about-block-detail">
-						<div class="wrapper-img-2">
-							<div class="ribbon-wrapper-green">
-								<div class="ribbon-green">NEW</div>
-							</div>
-						</div>
-						<h3 class="about-block-detail-title">Tầm nhìn và sứ mệnh</h3>
-						<p class="about-block-detail-desc"><b>Ánh Mai Sáng</b> nỗ lực phấn đấu trở thành trường học chuyên nghiệp và uy tín trong lĩnh vực trường học. Lấy hiệu quả đầu tư, sự hài lòng của khách hàng, làm phương châm hoạt động đem lại sự phát triển bền vững cho trường học.</p>
-					</div>
-					<div class="col-12 col-sm-12 col-md-12 col-lg-4 about-block-detail">
-						<div class="wrapper-img-3">
-							<div class="ribbon-wrapper-green">
-								<div class="ribbon-green">NEW</div>
-							</div>
-						</div>
-						<h3 class="about-block-detail-title">Giá trị cốt lõi</h3>
-						<p class="about-block-detail-desc">Tập thể lãnh đạo, nhân viên, trường mầm non Ánh Mai Sáng thống nhất và quyết tâm xây dựng văn hóa kinh doanh của Công ty theo phương châm:
-							<br>“Ánh Mai Sáng – Sáng tạo – Chân Thành – phát triển bền vững’’</p>
-						</div>
-					</div>
+					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					
+
 				</div>
 			</div>
 		</div>
@@ -70,21 +54,17 @@
 						<p>Lĩnh vực hoạt động chuyên nghiệp tích luỹ qua nhiều năm kinh nghiệm.</p>
 					</div>
 					<div class="row">
-						<div class="col-lg-4 field-block">
-							<i class="fas fa-chart-bar"></i>
-							<span>MỤC TIÊU GIÁO DỤC</span>
-							<p>Giúp trẻ phát triển về thể chất, tình cảm, trí tuệ, thẩm mỹ, hình thành những yếu tố đầu tiên của nhân cách, chuẩn bị cho trẻ vào lớp một. Hình thành và phát triển ở trẻ những chức năng tâm sinh lý, năng lực và phẩm chất mang tính nền tảng.</p>
-						</div>
+
+						<?php $__currentLoopData = $muctieugiaoduc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<div class="col-lg-4 field-block">
 							<i class="fab fa-empire"></i>
-							<span>NỘI DUNG GIÁO DỤC</span>
-							<p>Đảm bảo tính khoa học, tính vừa sức và nguyên tắc đồng tâm phát triển từ dễ đến khó; đảm bảo tính liên thông giữa các độ tuổi, giữa nhà trẻ, mẫu giáo và cấp tiểu học; thống nhất giữa nội dung giáo dục với cuộc sống hiện thực.</p>
+							<span><?php echo e($vl->title); ?></span>
+							<p><?php echo $vl->content; ?></p>
 						</div>
-						<div class="col-lg-4 field-block">
-							<i class="fas fa-certificate"></i>
-							<span>PHƯƠNG PHÁP GIÁO DỤC</span>
-							<p>Đối với giáo dục nhà trẻ: Phương pháp giáo dục chú trọng giao tiếp thường xuyên, thể hiện sự yêu thương và tạo sự gắn bó của người lớn với trẻ; chú ý đặc điểm cá nhân trẻ để lựa chọn phương pháp giáo dục phù hợp.</p>
-						</div>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+					
 					</div>
 				</div>
 			</div>

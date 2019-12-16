@@ -24,7 +24,7 @@
 
 						<br><br>
 						<h1 style="color:white;background-color:#0b446d;padding: 10px;font-weight: bold">Comment</h1>
-						<table class="table table-striped">
+						<table  class="table table-striped" style="margin-top: -9px">
 							<thead>
 							  <tr>
 								<th scope="col">Người Gửi</th>
@@ -50,7 +50,9 @@
 
 							</tbody>
 						  </table>
-						<hr>
+						  <br>
+						  <br>
+						  <br>
 						@if(isset($_SESSION['user']))
 						<form action="comment" method="POST">
 						<textarea name="content" placeholder="  Nhập ý kiến của bạn ...." cols="102" rows="5"></textarea>

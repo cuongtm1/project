@@ -47,6 +47,8 @@ class CustomRoute{
 				$router->get('/', ["App\Controllers\Backend\HomeController", "index"]);
 				$router->get('setting', ["App\Controllers\Backend\HomeController", "setting"]);
 				$router->post('setting', ["App\Controllers\Backend\HomeController", "postSetting"]);
+
+
 				$router->group(['prefix'=>'phu-huynh'],function($router){
 					$router->get('thong-tin',['App\Controllers\Backend\ParentController','show']);
 					$router->get('add',['App\Controllers\Backend\ParentController','add']);
@@ -143,6 +145,7 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 });
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
+$router->get('tuyensinh',['App\Controllers\Frontend\HomeController','tuyensinh']);
 
 $router->POST('comment',['App\Controllers\Backend\commentController','add']);
 
