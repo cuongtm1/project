@@ -32,7 +32,9 @@
 								<td>{{ $value->getChildrenJoinActivate->fullname }}</td>
 								<td>{{ $value->getChildrenJoinActivate->birthday }}</td>
 								<td>{{ gender($value->getChildrenJoinActivate->gender) }}</td>
-								<td><a class="btn btn-success" href="admin/activate/pending/delconfirm/{{ $value->getChildrenJoinActivate->id }}">Hủy tham gia</a>
+								<td>
+									<a class="btn btn-danger" href="admin/activate/pending/del/{{ $value->id }}">Xóa</a>
+								    <a class="btn btn-success" href="admin/activate/pending/delconfirm/{{ $value->getChildrenJoinActivate->id }}">Hủy tham gia</a>
 									
 								</td>
 							</tr>

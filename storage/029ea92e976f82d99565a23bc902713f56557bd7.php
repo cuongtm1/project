@@ -93,12 +93,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                      
                       <?php $__currentLoopData = $user->getParent->getChildren; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <tr>
                         <td><?php echo e($value->fullname); ?></td>
                         <td><?php echo e($value->birthday); ?></td>
                         <td><?php echo e(getGender($value->gender)); ?></td>
-                        <td><?php echo e($value->showlop->name); ?></td>
+                        <td><?php echo e(checkClass($value->showlop)); ?></td>
                       </tr>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

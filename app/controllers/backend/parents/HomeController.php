@@ -50,15 +50,32 @@ class HomeController extends BaseController
 		ss('editphuhuynh','Sửa thông tin thành công');
 		header('location:'.BASE_URL.'phu-huynh/edit/');
 	}
+
 	function joinactivate(){
+		$data['date']=date("Y-m-d");
 		$data['activate'] = ActivateModel::all();
 		$data['user'] = UserModel::where('phone',$_SESSION['user']['phone'])->first()->getParent()->first();
 		// $user = $data['user']->getChildren()->first()->getJoinActivate;
 		// dd($user);
 		$this->render('backend.phuhuynh.joinactivate',$data);
 	}
+
+
+
+
 	function postjoinactivate($id){
-		// dd($_REQUEST);
+		// check hs đã gửi yc tham gia chưa
+		$Activate =Join_activate::all();
+		$check = false;
+		foreach ($Activate as $key => $value) {
+			if($_POST['children'] == $value->children_id && $value->activate_id == $id){
+				$check = true;
+		}
+		}
+		if($check == true){
+			ss('joinactive-False','Học sinh đã đăng ký tham gia hoạt động đang chờ xác nhận');
+			header('location:'.BASE_URL.'phu-huynh/tham-gia-hoat-dong/');
+		}else{
 		$join_activate = new Join_activate();
 		$join_activate->activate_id = $id;
 		$join_activate->children_id = $_POST['children'];
@@ -66,7 +83,16 @@ class HomeController extends BaseController
 		$join_activate->save();
 		ss('joinactive','Đăng ký tham gia hoạt động thành công, Vui lòng chờ xác nhận từ nhà trường');
 		header('location:'.BASE_URL.'phu-huynh/tham-gia-hoat-dong/');
+		}
+		
 	}
+
+
+
+
+
+
+
 }
 
 ?>
