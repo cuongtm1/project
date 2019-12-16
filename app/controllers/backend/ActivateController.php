@@ -74,8 +74,18 @@ class ActivateController extends BaseController
 	}
 	function join($id){
 		$data['activate'] = ActivateModel::find($id)->getJoinActivate()->where('status',1)->get();
-
 		$this->render('backend.activate.join',$data);
 	}
+
+
+	function del123($id){
+		echo $id;
+		Join_activate::destroy($id);
+		header('Location:' .BASE_URL."admin/activate");
+	}
+
+
+
+
 }
 ?>

@@ -1,5 +1,8 @@
 @extends('frontend.master.masterlayout')
 @section('content')
+<script src="public/js/jquery-3.2.1.min.js"></script>
+<script src="public/js/main.js"></script>
+<script src="public/js/validate.js"></script>
 <div class="plan">
 	<div class="container">
 		<h3 class="plan-text">
@@ -38,35 +41,57 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-12">
-					<form>
+					<form method="POST" action="lien-he/post-lien-he" id="Contactform">
 						<div class="form-group form-group-contact">
-							<label for="exampleInputPassword1" style="margin-top: 5px;">Tên của bạn</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tên của bạn">
+							<label for="name" style="margin-top: 5px;">Tên của bạn</label>
+							<input type="text" name="name"  class="form-control" id="name" placeholder="Tên của bạn">
 						</div>
 						<div class="form-group form-group-contact">
 							<label for="exampleInputEmail1">Địa chỉ email</label>
-							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Địa chỉ email">
+							<input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Địa chỉ email">
 						</div>
 						<div class="form-group form-group-contact">
 							<label for="exampleInputPassword1">Số điện thoại</label>
-							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Số điện thoại">
+							<input type="text" name="phone" class="form-control" id="exampleInputPassword1" placeholder="Số điện thoại">
 						</div>
 						<div class="form-group form-group-contact">
 							<label for="exampleInputEmail1">Tiêu đề</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tiêu đề">
+							<input type="text" name="title" class="form-control" id="exampleInputEmail1"  placeholder="Tiêu đề">
 						</div>
 						<div class="form-group form-group-contact">
 							<label for="exampleFormControlTextarea1">Nội dung</label>
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Thông điệp"></textarea>
+							<textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Thông điệp"></textarea>
 						</div>
 						<button style="background-color: #18998e;border-color: #fff;box-shadow: none;outline: none;" type="submit" class="btn btn-primary" onclick="window.alert('Gửi thành công!')">Gửi</button>
 					</form>
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 	document.querySelector('iframe').style.width = '100%';
+
+	// validate form
+	$(document).ready(function() {
+            $("#Contactform").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 6,
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Vui lòng nhập tên",
+                        minlength: "không nhập dưới 6 ký tự"
+                    }
+                }
+            });
+        });
+
+
 </script>
 @endsection
