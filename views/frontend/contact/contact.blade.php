@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-12">
-					<form>
+					<form id="contactForm">
 						<div class="form-group form-group-contact">
 							<label for="exampleInputPassword1" style="margin-top: 5px;">Tên của bạn</label>
 							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tên của bạn">
@@ -68,5 +68,19 @@
 </div>
 <script>
 	document.querySelector('iframe').style.width = '100%';
+	jQuery(document).ready(function($) {
+		$("#contactForm").validate({
+			rules: {
+				title: "required",
+				description: "required",
+				editor1: "required",
+			},
+			messages: {
+				title: "Chưa nhập tiêu đề",
+				description: "Chưa nhập mô tả",
+				editor1: "Chưa nhập nội dung",
+			}
+		});
+	});
 </script>
 @endsection
