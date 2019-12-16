@@ -80,6 +80,7 @@ class CustomRoute{
 					$router->get('pending/confirm/{id}', ["App\Controllers\Backend\ActivateController", "confirm"]);
 					$router->get('pending/delconfirm/{id}', ["App\Controllers\Backend\ActivateController", "delconfirm"]);
 					$router->get('join/{id}',["App\Controllers\Backend\ActivateController", "join"]);
+					$router->get('pending/del/{id}', ["App\Controllers\Backend\ActivateController", "del123"]);
 				});
 				$router->group(['prefix'=>'category'],function($router){
 					$router->get('', ["App\Controllers\Backend\CategoryController", "index"]);
@@ -102,6 +103,22 @@ class CustomRoute{
 					$router->get('addthucong/{ageClass}', ["App\Controllers\Backend\lopController", "addthucong"]);
 					$router->POST('addcheckbox', ["App\Controllers\Backend\lopController", "Addcheckbox"]);
 				});
+				    $router->group(['prefix'=>'lien-he'],function($router){
+					$router->get('',['App\Controllers\Backend\contactController','index']);
+					$router->get('del/{id}',['App\Controllers\Backend\contactController','del']);
+					$router->get('detail/{id}',['App\Controllers\Backend\contactController','Detail']);
+					$router->POST('send',['App\Controllers\Backend\ContactController','send']);
+					$router->POST('send-ok',['App\Controllers\Backend\ContactController','send_ok']);
+				});
+				$router->group(['prefix'=>'image'],function($router){
+					$router->get('',['App\Controllers\Backend\imageController','index']);
+					$router->get('del/{id}',['App\Controllers\Backend\imageController','del']);
+					$router->get('edit/{id}',['App\Controllers\Backend\imageController','edit']);
+					$router->POST('edit',['App\Controllers\Backend\imageController','post_edit']);
+					$router->get('add',['App\Controllers\Backend\imageController','add']);
+					$router->POST('saveadd',['App\Controllers\Backend\imageController','save_add']);
+				});
+
 			});
 		});
 		// Parents
@@ -114,7 +131,15 @@ $router->group(['prefix'=>'phu-huynh'],function($router){
 });
 		// front end
 $router->get('',['App\Controllers\Frontend\HomeController','index']);
-$router->get('lien-he',['App\Controllers\Frontend\ContactController','index']);
+
+
+$router->group(['prefix'=>'lien-he'],function($router){
+	$router->get('',['App\Controllers\Frontend\ContactController','index']);
+	$router->POST('post-lien-he',['App\Controllers\Frontend\ContactController','postlienhe']);
+});
+
+
+
 $router->get('chuong-trinh-hoc',['App\Controllers\Frontend\ContactController','learning']);
 $router->get('tin-tuc',['App\Controllers\Frontend\NewsController','index']);
 $router->get('tin-tuc/{slug}.html',['App\Controllers\Frontend\NewsController','detail']);

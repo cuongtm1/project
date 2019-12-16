@@ -49,7 +49,7 @@ $news = Capsule::table('news')->take(4)->get();
 									<a class="nav-link" href="">Trang chủ</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="">Chương trình học</a>
+									<a class="nav-link" href="chuong-trinh-hoc">Chương trình học</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="tin-tuc">Tin tức - sự kiện</a>

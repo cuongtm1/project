@@ -9,6 +9,7 @@
 		</div>
 	</div>
 	{{ sss('joinactive') }}
+	{{ sss('joinactive-False') }}
 
 	<div class="row">
 		<div class="col-md-12">
@@ -26,7 +27,10 @@
 							</tr>
 						</thead>
 						<tbody>
+							
+
 							@foreach($activate as $value)
+							@if($value->stop >= $date)
 							<form action="phu-huynh/tham-gia-hoat-dong/{{ $value->id }}" method="post" accept-charset="utf-8">
 								<tr>
 									<td>{{ $value->activate }}</td>
@@ -44,6 +48,7 @@
 									</td>
 								</tr>
 							</form>
+							@endif
 							@endforeach
 						</tbody>
 					</table>
