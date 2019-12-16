@@ -73,7 +73,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 	document.querySelector('iframe').style.width = '100%';
-<<<<<<< HEAD
 	jQuery(document).ready(function($) {
 		$("#contactForm").validate({
 			rules: {
@@ -88,27 +87,5 @@
 			}
 		});
 	});
-=======
-
-	// validate form
-	$(document).ready(function() {
-            $("#Contactform").validate({
-                rules: {
-                    name: {
-                        required: true,
-                        minlength: 6,
-                    }
-                },
-                messages: {
-                    name: {
-                        required: "Vui lòng nhập tên",
-                        minlength: "không nhập dưới 6 ký tự"
-                    }
-                }
-            });
-        });
-
-
->>>>>>> af1595b4d9dfa532f209be0064c20ea918325932
 </script>
 @endsection
