@@ -9,7 +9,7 @@ class NewsController extends BaseController
 {
 	
 	function index(){
-		$data['news']= NewsModel::all();
+		$data['news']= NewsModel::where('cate_id',1)->get();
 		$this->render('frontend.news.news',$data);
 	}
 	function detail($slug){

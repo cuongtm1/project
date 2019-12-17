@@ -16,7 +16,6 @@
 	<div style="line-height: 2;" class="container">
 
 
-<p><img src="https://saigonacademy.com/sites/saigonacademy.com/files/2019-06/TUYEN-SINH-2019.png" ></p>
 <p>HƯỚNG DẪN THÍ SINH TRÚNG TUYỂN NHẬP HỌC</p>
 <p>Thứ sáu, 09 Tháng 8 2019 11:10</p>
 <p>Khi đến nhập học, thí sinh cần chuẩn bị như sau:</p>
